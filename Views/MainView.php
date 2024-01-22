@@ -20,15 +20,14 @@
     
     <div class="container-central">
         
-        <?php include "partials\play_button.php"; ?>
-        
-        
+
+
         <nav class="nav-central-top">
-        
-        
-            
+
+
+
         </nav>
-        
+
 
 
     </div>
@@ -48,6 +47,7 @@
 
 <nav class="nav-bottom">
 
+    <?php include "partials\mainAudio.php"; ?>
 
 </nav>
 

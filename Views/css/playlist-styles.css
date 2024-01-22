@@ -188,13 +188,14 @@
 }
 .player__playlist {
     height: 100% ;
-    /*overflow: auto;*/
+    overflow: auto;
     padding: 1.05em .9em 0 1.2em ;
 }
 
 .player__song {
-    /* gap: 0 .65em ; */
+    gap: 0 7px ;
     display: flex ;
+    align-items: center;
     cursor: pointer ;
     margin-bottom: .5em ;
     padding-bottom: .7em ;

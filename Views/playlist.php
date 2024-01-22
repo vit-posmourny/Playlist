@@ -1,7 +1,7 @@
 <ul class="player__playlist list">
     <li class="player__song">
         <img class="player__img img" src="http://physical-authority.surge.sh/imgs/1.jpg" alt="cover">
-
+        <?php include 'partials\play_button.php' ?>
         <p class="player__context">
             <b class="player__song-name">no time</b>
             <span class="flex">
