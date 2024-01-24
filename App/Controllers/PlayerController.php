@@ -8,6 +8,6 @@ class PlayerController
 {
     public function index()
     {
-        return View::render('MainView');
+        return View::render('Main');
     }
 }

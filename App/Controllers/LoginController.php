@@ -6,8 +6,9 @@ use Core\View;
 
 class LoginController
 {
-    public function index()
+    public function showLogin()
     {
-        return View::render('loginView');
+        return View::render('login');
     }
+    
 }

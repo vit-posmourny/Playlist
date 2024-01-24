@@ -1,15 +1,15 @@
 <ul class="player__playlist list">
     <li class="player__song">
         <img class="player__img img" src="http://physical-authority.surge.sh/imgs/1.jpg" alt="cover">
-        <?php include 'partials\play_button.php' ?>
+        <?php include "Views\partials\play_button.php" ?>
         <p class="player__context">
             <b class="player__song-name">no time</b>
             <span class="flex">
                     <span class="player__title">lastlings</span>
                     <span class="player__song-time">3:58</span>
-                </span>
+            </span>
         </p>
-        <audio class="audio" src="http://physical-authority.surge.sh/music/1.mp3"></audio>
+
     </li>
     <li class="player__song">
         <img class="player__img img" src="http://physical-authority.surge.sh/imgs/2.jpg" alt="cover">
@@ -18,7 +18,7 @@
             <span class="flex">
                     <span class="player__title">the weeknd</span>
                     <span class="player__song-time"></span>
-                </span>
+            </span>
         </p>
         <audio class="audio" src="http://physical-authority.surge.sh/music/2.mp3"></audio>
     </li>
