@@ -7,13 +7,11 @@ use Core\Database;
 class Model
 {
     protected $database;
-    protected $mysql;
     protected $table;
     
     public function __construct()
     {
         $this->database = new Database;
-        $this->mysql = new Mysql;
     }
     
     public function all(): array

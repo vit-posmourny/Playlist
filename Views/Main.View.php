@@ -7,11 +7,15 @@
     
     <nav class="nav-left">
         
-        <div class="nav-left-top">
+        <div class="nav-left-upper">
         
+        <button class="button-main width">Přidat Uživatele</button>
         <button class="button-main width"></button>
         <button class="button-main width"></button>
-        <button class="button-main width"></button>
+        
+        </div>
+        <div class="nav-left-bottom">
+        
         
         
         </div>
@@ -21,20 +25,20 @@
     
     <div class="container-central">
         
-
-
+        
+        
         <nav class="nav-central-top">
             
             <!--Tlačítko přidat uživatele-->
             
             <form action="/Playlist/register" method="get">
-                
-                <input id="id-btn-addUser" class="button-main" type="submit" value="Přidat Uživatele">
-                
+            
+                <button id="id-btn-addUser" class="button-main" type="submit">Přidat uživatele</button>
+            
             </form>
             
         </nav>
-
+        
 
     </div>
 

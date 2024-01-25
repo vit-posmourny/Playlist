@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use Core\View;
+use App\Models\User;
+
 class RegisterController
 {
     
@@ -17,7 +20,7 @@ class RegisterController
         $this->userModel = new User();
     }
     
-    public function showRegisterForm(): View
+    public function showRegisterForm()
     {
         $error = $_GET['error'] ?? null;
         

@@ -1,7 +1,8 @@
 <ul class="player__playlist list">
     <li class="player__song">
         <img class="player__img img" src="http://physical-authority.surge.sh/imgs/1.jpg" alt="cover">
-        <?php include "Views\partials\play_button.php" ?>
+        <?php /*include "Views\partials\play_button.php" */?>
+        <img id="0" class="list_play_icon" src="\Playlist\images\play_circle_FILL0_wght300_GRAD0_opsz24.svg" alt="play-icon">
         <p class="player__context">
             <b class="player__song-name">no time</b>
             <span class="flex">
@@ -13,6 +14,7 @@
     </li>
     <li class="player__song">
         <img class="player__img img" src="http://physical-authority.surge.sh/imgs/2.jpg" alt="cover">
+        <img id="0" class="list_play_icon" src="\Playlist\images\play_circle_FILL0_wght300_GRAD0_opsz24.svg" alt="play-icon">
         <p class="player__context">
             <b class="player__song-name">blinding lights</b>
             <span class="flex">
@@ -24,6 +26,7 @@
     </li>
     <li class="player__song">
         <img class="player__img img" src="http://physical-authority.surge.sh/imgs/3.jpg" alt="cover">
+        <img id="1" class="list_play_icon" src="\Playlist\images\play_circle_FILL0_wght300_GRAD0_opsz24.svg" alt="play-icon">
         <p class="player__context">
             <b class="player__song-name">джованна</b>
             <span class="flex">
@@ -35,6 +38,7 @@
     </li>
     <li class="player__song">
         <img class="player__img img" src="http://physical-authority.surge.sh/imgs/4.jpg" alt="cover">
+        <img id="2" class="list_play_icon" src="\Playlist\images\play_circle_FILL0_wght300_GRAD0_opsz24.svg" alt="play-icon">
         <p class="player__context">
             <b class="player__song-name">a man</b>
             <span class="flex">
@@ -46,6 +50,7 @@
     </li>
     <li class="player__song">
         <img class="player__img img" src="http://physical-authority.surge.sh/imgs/5.jpg" alt="cover">
+        <img id="3" class="list_play_icon" src="\Playlist\images\play_circle_FILL0_wght300_GRAD0_opsz24.svg" alt="play-icon">
         <p class="player__context ">
             <b class="player__song-name">unforgetting</b>
             <span class="flex">
@@ -57,6 +62,7 @@
     </li>
     <li class="player__song">
         <img class="player__img img" src="http://physical-authority.surge.sh/imgs/6.jpg" alt="cover">
+        <img id="4" class="list_play_icon" src="\Playlist\images\play_circle_FILL0_wght300_GRAD0_opsz24.svg" alt="play-icon">
         <p class="player__context">
             <b class="player__song-name">waharan</b>
             <span class="flex">
@@ -68,6 +74,7 @@
     </li>
     <li class="player__song">
         <img class="player__img img" src="http://physical-authority.surge.sh/imgs/7.jpg" alt="cover">
+        <img id="5" class="list_play_icon" src="\Playlist\images\play_circle_FILL0_wght300_GRAD0_opsz24.svg" alt="play-icon">
         <p class="player__context ">
             <b class="player__song-name">starlight feat mr gabriel <span class="uppercase">4am</span> remix</b>
             <span class="flex">
@@ -126,5 +133,30 @@
         </p>
         <audio class="audio" src="http://physical-authority.surge.sh/music/1.mp3"></audio>
     </li>
+    
+    <li class="player__song">
+        <img class="player__img img" src="http://physical-authority.surge.sh/imgs/1.jpg" alt="cover">
+        <p class="player__context">
+            <b class="player__song-name">no time</b>
+            <span class="flex">
+                    <span class="player__title">lastlings</span>
+                    <span class="player__song-time"></span>
+                </span>
+        </p>
+        <audio class="audio" src="http://physical-authority.surge.sh/music/1.mp3"></audio>
+    </li>
+    
+    <li class="player__song">
+        <img class="player__img img" src="http://physical-authority.surge.sh/imgs/1.jpg" alt="cover">
+        <p class="player__context">
+            <b class="player__song-name">no time</b>
+            <span class="flex">
+                    <span class="player__title">lastlings</span>
+                    <span class="player__song-time"></span>
+                </span>
+        </p>
+        <audio class="audio" src="http://physical-authority.surge.sh/music/1.mp3"></audio>
+    </li>
+    
 
 </ul>

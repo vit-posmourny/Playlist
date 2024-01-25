@@ -1,4 +1,4 @@
-<?php Core\View::render('partials/headerView', ['title' => $title ?? 'Registrace']); ?>
+<?php Core\View::render('partials/header', ['title' => $title ?? 'Registrace']); ?>
 
 <body>
 
@@ -17,7 +17,7 @@
         
     </main>
 
-    <script type="text/javascript"><?php include __DIR__."/js/script_login.js"?></script>
+    <script type="text/javascript"><?php include __DIR__."/js/script_register.js"?></script>
 
 </body>
 

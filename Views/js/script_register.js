@@ -33,7 +33,7 @@ function emailValidate()
     if (!(this.value.includes('@') && this.value.includes('.')))
     {
         this.classList.add('input--error');
-        alert("Emailová adresa musí obsahovat @ a \".\".");
+        // alert("Emailová adresa musí obsahovat @ a \".\".");
         emailValidState = false;
 
     } else

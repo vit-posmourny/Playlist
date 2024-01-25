@@ -2,11 +2,12 @@
 
 :root{
     --background: #e4e4e4;
-    --primary: #3C5BFA;
+    --primary: #0070C9;
     --pimary-hover: #2d43b4;
     --success: #00BA88;
     --error: #FA3C6A;
     --light-gray: #F0F0F0;
+    --light-blue: #e0f1ff;
     font-family: 'Helvetica', sans-serif;
 
 }
@@ -18,9 +19,13 @@ body {
 
 a{
     color: var(--primary);
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: none;
     transition: text-decoration 5s ease-in-out;
+}
+
+p{
+    font-size: 0.8rem;
 }
 
 a:hover{
@@ -29,10 +34,11 @@ a:hover{
 }
 
 input {
-    font-size: 1rem;
+    font-family: "Century Gothic";
+    font-size: 0.8rem;
     padding: 10px;
-    background-color: var(--light-gray);
-    border: none;
+    background-color: var(--light-blue);
+    border: 1px solid cornflowerblue;
     border-radius: 4px;
     outline: none;
 }
@@ -40,7 +46,7 @@ input {
 .input--error {
     font-size: 1rem;
     padding: 10px;
-    background-color: var(--light-gray);
+    background-color: var(--light-blue);
     border-radius: 4px;
     border: 2px solid red;
 }
@@ -143,7 +149,8 @@ input {
 }
 
 .form__headline {
-    font-weight: 600;
+    font-family: "Century Gothic";
+    font-weight: normal;
     text-align: center;
 }
 
