@@ -54,7 +54,7 @@
 
 <footer class="foot-bottom">
 
-    <?php include "partials\mainAudio.php"; ?>
+   
 
 </footer>
 

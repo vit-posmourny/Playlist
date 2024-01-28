@@ -1,9 +1,7 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');*/
 
 :root{
-    --background: #e4e4e4;
     --primary: #0070C9;
-    --pimary-hover: #2d43b4;
     --success: #00BA88;
     --error: #FA3C6A;
     --light-gray: #F0F0F0;
@@ -105,39 +103,4 @@ input {
     font-family: "Century Gothic";
     font-weight: normal;
     text-align: center;
-}
-
-
-.button--primary:hover {
-    background-color: var(--pimary-hover);
-}
-
-
-.modal-overlay {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-    animation-name: fromTop, backgroundAnim;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-out;
-}
-
-/* Add Animation */
-@keyframes fromTop {
-    0% {top: -300px;}
-    100% {top: 0;}
-}
-
-@keyframes backgroundAnim {
-    0% {background-color: rgba(0,0,0,0)}
-    80% {background-color: rgba(0,0,0,0)}
-    100% {background-color: rgba(0,0,0,0.4)}
 }
