@@ -4,18 +4,18 @@
 
 <main class="container-hero">
 
+    <!----------------------------- LEVÁ NAVIGACE -------------------------------->
     
     <nav class="nav-left">
         
         <div class="nav-left-upper">
         
-        <button class="button-main width">
-            <img src="\Playlist\images\home_FILL0_wght400_GRAD0_opsz24.svg" alt="Home">
-        </button>
-        <button class="button-main width"></button>
-        <button class="button-main width"></button>
+            <button class="button-main width"></button>
+            <button class="button-main width"></button>
+            <button class="button-main width"></button>
         
         </div>
+        
         <div class="nav-left-bottom">
         
         
@@ -24,52 +24,43 @@
         
     </nav>
     
+    <!--------------------------------- CENTRAL ---------------------------------->
     
     <div class="container-central">
         
         
         <nav class="nav-central-top">
             
-            <!--Tlačítko přidat uživatele-->
-            
-            <form action="/Playlist/register" method="get">
-            
-                <button id="id-btn-addUser" class="button-main" type="submit">Registrace</button>
-            
-            </form>
+            <a href="\Playlist\register"><button id="id-btn-reg" class="button-main">Registrace</button></a>
             
             <a href="/Playlist/login"><button id="id-btn-login" class="button-main">Přihlášení</button></a>
             
         </nav>
         
-        <div>
-            
-            <img src="images/music-notes-gif-transparent-5.png" alt="">
-            
-        </div>
         
-
     </div>
-
-
-
+    
+    <!----------------------------- PRAVÁ NAVIGACE ------------------------------->
+    
     <div class="nav-right">
 
         <?php include "partials/playlist.php"; ?>
 
     </div>
 
-
 </main>
 
+<!------------------------------ FOOTER -------------------------------->
 
-<nav class="nav-bottom">
+<footer class="foot-bottom">
 
     <?php include "partials\mainAudio.php"; ?>
 
-</nav>
+</footer>
 
-<script type="text/javascript"><?php include "js\list_play_button.js"?></script>
+<!----------------------------- SKRIPTY -------------------------------->
+
+<script type="text/javascript"> <?php include "js\list_play_button.js"?> </script>
 
 </body>
 

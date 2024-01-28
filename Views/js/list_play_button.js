@@ -1,13 +1,17 @@
 let audio = document.getElementById('myAudio');
-const button = document.getElementsByClassName('list_play_button')[0];
-const icon = document.getElementsByClassName('list_play_icon')[0];
-console.log(icon);
+const icons = document.getElementsByClassName('list_play_icon');
+console.log(icons);
 
 audio.addEventListener("play", iconCheck);
 audio.addEventListener("pause", iconCheck);
 audio.addEventListener('ended', myEnd);
-icon.addEventListener('click', playCheck);
 
+// icon.addEventListener('click', playCheck);
+
+for (let i = 0; i < icons.length; i++) {
+    
+    icons[i].tagName + "<br>";
+}
 
 function iconCheck()
 {

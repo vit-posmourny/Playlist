@@ -18,10 +18,6 @@ class User extends Model
     
     public function emailExists($email)
     {
-        echo '<pre>';
-        var_dump($email);
-        echo '<pre>';
-        
         return $this->database->query("SELECT * from $this->table where email = '$email'")[0];
     }
 }

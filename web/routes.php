@@ -1,5 +1,5 @@
 <?php
-    use App\Controllers\PlayerController;
+    use App\Controllers\MainController;
     use App\Controllers\LoginController;
     use App\Controllers\RegisterController;
     use Core\Router;
@@ -8,7 +8,7 @@
 
     // definice cest
 
-    $router->get("/Playlist/", PlayerController::class, 'index');
+    $router->get("/Playlist/", MainController::class, 'index');
 
     $router->get("/Playlist/register", RegisterController::class, 'showRegisterForm');
     $router->post("/Playlist/register", RegisterController::class, 'registerUser');

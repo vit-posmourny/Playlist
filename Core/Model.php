@@ -2,11 +2,9 @@
 
 namespace Core;
 
-use Core\Database;
-
 class Model
 {
-    protected $database;
+    protected Database $database;
     protected $table;
     
     public function __construct()

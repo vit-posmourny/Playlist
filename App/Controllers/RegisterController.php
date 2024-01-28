@@ -38,13 +38,13 @@ class RegisterController
     public function registerUser($data)
     {
         $user = $this->userModel->emailExists($data['email']);
-//        alert(var_dump($user));
         
         if ($user) {
-            //stopnu registeraci a vrátím ho zpět na registrační formulář s chybou
+           
             return header('location: /Playlist/register?error=user_exists');
+            
         } else {
-            //provedu registraci / vytvořím záznám v tabulce users
+          
             $this->userModel->create($data);
             $registered_user = $this->userModel->emailExists($data['email']);
             Auth::login($registered_user['id']);
