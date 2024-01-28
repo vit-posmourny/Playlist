@@ -4,21 +4,25 @@ namespace App\Controllers;
 
 use Core\View;
 use App\Models\User;
+use App\Services\Auth;
 
 class RegisterController
 {
     
     public User $userModel;
     
+    // Tady budou jen hlášky, které se vrací ze serveru do PC
     public $errors =  [
-        "wrong_credentials" => "Špatné registrovací údaje",
+        "wrong_credentials" => "Špatné registrační údaje.",
         "user_exists" => "Uživatel s těmito údaji už v databázi existuje.",
     ];
     
+    // KONSTRUKTOR
     public function __construct()
     {
         $this->userModel = new User();
     }
+    
     
     public function showRegisterForm()
     {
@@ -34,10 +38,11 @@ class RegisterController
     public function registerUser($data)
     {
         $user = $this->userModel->emailExists($data['email']);
+//        alert(var_dump($user));
         
         if ($user) {
             //stopnu registeraci a vrátím ho zpět na registrační formulář s chybou
-            return header('location: /todoapp-implement_model-2/register?error=user_exists');
+            return header('location: /Playlist/register?error=user_exists');
         } else {
             //provedu registraci / vytvořím záznám v tabulce users
             $this->userModel->create($data);
@@ -45,7 +50,7 @@ class RegisterController
             Auth::login($registered_user['id']);
             
             
-            return header('location: /todoapp-implement_model-2/');
+            return header('location: /Playlist/');
         }
     }
 }

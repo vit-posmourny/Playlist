@@ -9,12 +9,16 @@
     --light-gray: #F0F0F0;
     --light-blue: #e0f1ff;
     font-family: 'Helvetica', sans-serif;
+}
 
+* {
+    box-sizing: border-box;
 }
 
 body {
     min-width: 850px;
     margin: 0px;
+    background: var(--background-main);
 }
 
 a{
@@ -44,7 +48,7 @@ input {
 }
 
 .input--error {
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding: 10px;
     background-color: var(--light-blue);
     border-radius: 4px;
@@ -66,74 +70,23 @@ input {
     align-items: center;
     margin: 0px auto 0px auto;
     height: 100vh;
-    /*background-color: #2d43b4;*/
 }
-
-.tabs {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    /*gap: 10rem;*/
-    margin-bottom: 2rem;
-    padding-bottom: 4px;
-    padding-top: 16px;
-    border-bottom: solid var(--light-gray);
-}
-
-.todo {
-    background-color: white;
-    border-radius: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-style: solid;
-    border-width: 2px;
-    border-color: var(--light-gray);
-    margin-bottom: 1rem;
-}
-
-.todo--done {
-    text-decoration: line-through;
-
-}
-
-.todo:hover{
-    box-shadow: 0px 3px 31px -12px rgba(0,0,0,0.10);
-}
-
-.todo__headline {
-    font-size: 1.5rem;
-    margin-bottom: 0;
-    margin-top: 0;
-}
-
-.todo__description {
-    margin-top: 8px;
-    font-size: 1rem;
-    color: gray;
-}
-
 
 
 .form {
     z-index: 100;
     min-width: 33vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    flex-direction: column;
     margin: auto;
     padding: 24px 24px 24px 24px;
     border-radius: 4px;
     border-width: 4px;
-    background-color: white;
-    border-style: solid;
-    border-color: var(--light-gray);
+    background-color: #5e5e5e;
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 4px 3px #42A1ECFF;
 }
 
 .form__footer {
@@ -142,7 +95,7 @@ input {
 }
 
 .form__error-message{
-    font-size: 14px;
+    font-size: 0.8em;
     margin-top: 0;
     margin-bottom: 0;
     color: var(--error);
@@ -154,36 +107,11 @@ input {
     text-align: center;
 }
 
-.button--primary {
-    background-color: var(--primary);
-    font-size: 1.5rem;
-    padding: 16px 64px 16px 64px;
-    border-radius: 1rem;
-    color: white;
-    border: none;
-}
 
 .button--primary:hover {
     background-color: var(--pimary-hover);
 }
 
-.button--success {
-    background-color: var(--success);
-    font-size: 0.8rem;
-    padding: 8px 16px 8px 16px;
-    border-radius: 0.5rem;
-    color: white;
-    border: none;
-}
-
-.button--error {
-    background-color: var(--error);
-    font-size: 0.8rem;
-    padding: 8px 16px 8px 16px;
-    border-radius: 0.5rem;
-    color: white;
-    border: none;
-}
 
 .modal-overlay {
     display: none;

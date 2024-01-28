@@ -1,0 +1,6 @@
+
+importovat: \Playlist\users.sql
+
+email:                      heslo:
+vit.posmourny@gmail.com     12345678
+bubak@gmail.com             87654321

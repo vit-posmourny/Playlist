@@ -1,7 +1,8 @@
 let email = document.getElementById('id_input_email');
 let pass = document.getElementById('id_input_pass');
 let pass2 = document.getElementById('id_input_pass2');
-let register = document.getElementById('id_register');
+let registerBtn = document.getElementById('id-btn-register');
+
 
 let emailValidState = false;
 let passValidState = false;
@@ -11,20 +12,22 @@ let pass2ValidState = false;
 email.addEventListener("change", emailValidate);
 pass.addEventListener("change", passValidate);
 pass2.addEventListener("change", pass2Validate);
-register.addEventListener("submit", checkAllStates);
+registerBtn.addEventListener("click", checkAllStates);
 
 
 
 function checkAllStates() {
-
+    
+    
     if (emailValidState && passValidState && pass2ValidState)
     {
-        // register.action = "../controllers/checkUserInDatabase.php";
+        document.getElementById('id_form_register').setAttribute('action', "/Playlist/register");
+
+        document.getElementById('id_form_register').submit();
 
     } else {
-
-        alert("Vyplňte prosím všechny údaje.");
-        // register.action = "";
+        
+        document.getElementById('id-all-err').innerHTML = "Vyplňte prosím všechny údaje.";
     }
 
 }
@@ -32,30 +35,33 @@ function emailValidate()
 {
     if (!(this.value.includes('@') && this.value.includes('.')))
     {
+        
         this.classList.add('input--error');
-        // alert("Emailová adresa musí obsahovat @ a \".\".");
+        document.getElementById('id-mail-err').innerHTML = 'Emailová adresa musí obsahovat @ a \".\".';
         emailValidState = false;
+        
 
-    } else
-    {
+    } else {
+        
         this.classList.remove('input--error');
         emailValidState = true;
+        document.getElementById('id-mail-err').innerHTML = '';
     }
 
 }
 
 function passValidate()
 {
-    if (this.value.length < 8) {
-		
-        alert("Heslo musí být alespoň 8 znaků dlouhé.");
+    if (this.value.length < 1) {
+        
         this.classList.add('input--error');
-        login.action = "";
+        document.getElementById('id-pass-err').innerHTML = "Heslo musí být alespoň 8 znaků dlouhé.";
         passValidState = false;
 
     } else {
 
         this.classList.remove('input--error');
+        document.getElementById('id-pass-err').innerHTML = '';
         passValidState = true;
     }
 
@@ -65,13 +71,14 @@ function pass2Validate() {
 
     if(this.value !== pass.value)
     {
-        alert("Zadejte stejné heslo, pro potvrzení.");
         this.classList.add('input--error');
+        document.getElementById('id-pass2-err').innerHTML = "Zadejte stejné heslo, pro potvrzení.";
         pass2ValidState = false;
 
     } else {
 
         this.classList.remove('input--error');
+        document.getElementById('id-pass2-err').innerHTML = '';
         pass2ValidState = true;
     }
 }

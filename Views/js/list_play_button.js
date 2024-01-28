@@ -1,6 +1,6 @@
 let audio = document.getElementById('myAudio');
 const button = document.getElementsByClassName('list_play_button')[0];
-const icon = document.getElementsByClassName('list_play_icon');
+const icon = document.getElementsByClassName('list_play_icon')[0];
 console.log(icon);
 
 audio.addEventListener("play", iconCheck);

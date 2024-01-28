@@ -4,15 +4,39 @@
 
     <main class="container--center">
         
-        <form id="id_register" action="" class="form" name="name_form" method="post">
+        <form id="id_form_register" action="" class="form"  method="post">
+            
             <h1 class="form__headline">Registrace</h1>
-            <input id="id_input_email" type="text" name="name_email" placeholder="Email" >
-            <input id="id_input_pass" type="text" name="name_pass" placeholder="Heslo">
-            <input id="id_input_pass2" type="text" name="name_pass2" placeholder="Potvrdit heslo">
-            <button class="button-main" type="submit">Vytvořit účet</button>
+            
+            <input id="id_input_email" type="text" name="email" placeholder="Email" >
+            
+                <p id="id-mail-err" class="form__error-message"></p>
+            
+            <input id="id_input_pass" type="text" name="password" placeholder="Heslo">
+            
+                <p id="id-pass-err" class="form__error-message"></p>
+            
+            <input id="id_input_pass2" type="text" name="password" placeholder="Potvrdit heslo">
+            
+                <p id="id-pass2-err" class="form__error-message"></p>
+            
+            <button id="id-btn-register" class="button-main" type="button">Vytvořit účet</button>
+            
+                <p id="id-all-err" class="form__error-message"></p>
+            
+                <?php
+                if(isset($error))
+                {
+                    echo'<p class="form__error-message">'.$error.'</p>';
+                }
+                ?>
+            
             <div class="form__footer">
-                <p>Již máte účet? <a href="login.View.php">Přihlaste se</a></p>
+                
+                <p>Již máte účet?  <a href="/Playlist/login">Přihlaste se</a></p>
+                
             </div>
+            
         </form>
         
     </main>

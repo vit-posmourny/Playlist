@@ -1,7 +1,0 @@
-* {
-    box-sizing: border-box;
-}
-
-audio::-webkit-media-controls-panel{
-    background-color: #006DBC;
-}
