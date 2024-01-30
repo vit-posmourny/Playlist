@@ -47,7 +47,7 @@ class LoginController
             // vezmeme heslo z databáze (hash) a heslo z formuláře a proženeme to password_verify
             if (password_verify($data['password'], $user['password']))
             {
-                Auth::login($user['id']);
+                Auth::login($user);
                  
                 return header('location: /Playlist/');
                 
@@ -65,7 +65,6 @@ class LoginController
     public function logout()
     {
         Auth::logout();
-        die('odhlasen');
         return header('location: /Playlist/');
     }
     

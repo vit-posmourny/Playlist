@@ -30,9 +30,9 @@
 .playlist-main {
     display: flex;
     flex-direction: column;
-    flex-shrink: 1;
     height: 100% ;
-    padding-block: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.3rem;
     padding-inline: 0.5rem;
     font-family: 'Quicksand', sans-serif ;
     border-radius: 0.5rem;

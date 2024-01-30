@@ -10,7 +10,6 @@ class View
         {
             $variable_name = $variable_name;
             $$variable_name = $variable;
-//            echo '<pre>'; print_r($playlist); echo '</pre>';
         }
         
         require_once "Views/" . $viewName . ".View.php";

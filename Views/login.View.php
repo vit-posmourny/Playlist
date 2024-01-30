@@ -1,3 +1,7 @@
+<?php //  print_r($_COOKIE);
+//setcookie('remember_token', $_SESSION('remember_token'), time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
+
 <?php Core\View::render('partials/header', ['title' => $title ?? 'Login']); ?>
 
 <body >

@@ -12,8 +12,18 @@ class User extends Model
     {
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
         
-        return $this->database->query("INSERT INTO $this->table (email, password)
-        VALUES (?, ?)", $data);
+        $token = bin2hex(random_bytes(32));
+        
+        $myData = array('email' => $data['email'], 'password' => $data['password'], 'remember_token' => $token);
+        
+        return $this->database->query("INSERT INTO $this->table (email, password, remember_token)
+        VALUES (?, ?, ?)", $myData);
+    }
+    
+    
+    public function verifyToken()
+    {
+        return $this->database->query("SELECT 'remember_token' from $this->table where email = '$email'")[0];
     }
     
     public function emailExists($email)

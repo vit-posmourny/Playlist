@@ -1,6 +1,7 @@
 <?php
+// OBR. pro IKONA / TLACITKO
+$playicon = "\Playlist\images\play_circle_FILL0_wght300_GRAD0_opsz24.svg";
 
-$playicon = "\Playlist\images\pause_circle_FILL0_wght300_GRAD0_opsz24.svg";
 $index = 0;
 
 echo '<ul class="playlist-main mask">

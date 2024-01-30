@@ -1,5 +1,5 @@
-let play_icon_path = 'images/play_circle_FILL0_wght300_GRAD0_opsz24.svg';
-let pause_icon_path = 'images/pause_circle_FILL0_wght300_GRAD0_opsz24.svg';
+let play_icon_path = 'images/pause_circle_FILL0_wght300_GRAD0_opsz24.svg';
+let pause_icon_path = 'images/play_circle_FILL0_wght300_GRAD0_opsz24.svg';
 let first_entry = true;
 let id_current = '';
 let id_prev = '';
@@ -158,7 +158,6 @@ function myEndCurrent()
 
 function updateTrackTime(track)
 {
-    
     let currTime = Math.floor(track.currentTime).toString();
     let duration = Math.floor(track.duration).toString();
     
@@ -166,8 +165,6 @@ function updateTrackTime(track)
     duration = formatSecondsAsTime(duration);
     
     tdTTs[id_current].innerHTML = currTime +'/'+ duration;
-    
-    
 }
 
 function formatSecondsAsTime(secs) {

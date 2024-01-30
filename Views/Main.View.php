@@ -1,6 +1,10 @@
+<?php
+//    setcookie('remember_token', $_SESSION['remember_token'], time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
 <?php Core\View::render('partials/header', ['title' => $title ?? 'Playlist']); ?>
 
 <body>
+
 
 <main class="container-hero">
 
@@ -9,10 +13,10 @@
     <nav class="nav-left">
         
         <div class="nav-left-upper">
-        
-            <button class="button-main width"></button>
-            <button class="button-main width"></button>
-            <button class="button-main width"></button>
+            
+                <button id="id-user-btn" class="button-main width">ID: <?php echo $_SESSION['user_id'];?></button>
+                <button id="id-logout-btn" type="submit" class="button-main width"><?php echo $_SESSION['user_email'];?></button>
+                <button class="button-main width">Token: <?php echo $_SESSION['remember_token'];?></button>
         
         </div>
         
@@ -33,9 +37,15 @@
             
             <a href="\Playlist\register"><button id="id-btn-reg" class="button-main">Registrace</button></a>
             
+            <button class="button-main width" types="submit" formaction="/Playlist/login/logout/">LogOut</button>
+            
             <a href="/Playlist/login"><button id="id-btn-login" class="button-main">Přihlášení</button></a>
             
         </nav>
+        
+        <div class="central-bottom">
+        
+        </div>
         
         
     </div>

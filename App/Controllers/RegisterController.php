@@ -47,8 +47,8 @@ class RegisterController
           
             $this->userModel->create($data);
             $registered_user = $this->userModel->emailExists($data['email']);
-            Auth::login($registered_user['id']);
             
+            Auth::login($registered_user);
             
             return header('location: /Playlist/');
         }
