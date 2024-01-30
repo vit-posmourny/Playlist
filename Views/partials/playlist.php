@@ -3,32 +3,47 @@
 $playicon = "\Playlist\images\pause_circle_FILL0_wght300_GRAD0_opsz24.svg";
 $index = 0;
 
-echo '<ul class="player__playlist list">';
+echo '<ul class="playlist-main mask">
+
+        <div class="div-for-li">';
+
 
 foreach ($playlist as $song)
 {
-    
     echo '
-        <li class="player__song">
+        <li class="playlist-item">
         
-            <audio id="myAudio'.$index.'" ontimeupdate="getCurrTime()" class="state_pause audio_class" src="'.$song['track_path'].'"></audio>
+            <audio id="myAudio'.$index.'" ontimeupdate="updateTrackTime(this)" class="state_pause audio_class"
             
-            <img class="player__img img" src="'.$song['img_path'].'" alt="cover">
+                    src="'.$song['track_path'].'">
+                    
+            </audio>
             
-            <img id="'.$index.'" class="list_play_icon" onclick="getElementId(event)"  src="'.$playicon.'" data-track-path="'.$song['track_path'].' alt="play-icon">
+            <img class="playlist-img img" src="'.$song['img_path'].'" alt="cover">
             
-            <p class="player__context">
+            <img id="'.$index.'" class="list-play-icon" onclick="getElementId(event)"
+            
+                    src="'.$playicon.'" data-track-path="'.$song['track_path'].' alt="play-icon">
+            
+            <div class="song-text-area">
+            
+                <b class="track-name">'.$song['track_name'].'</b>
                 
-                <b class="player__track-name">'.$song['track_name'].'</b>
-                <span class="flex">
-                        <span class="player__title">'.$song['album'].'</span>
-                        <span id="id-tracktime'.$index.'" class="player__track-time"></span>
-                </span>
-            </p>
-    
+                <div class="inlineFlex">
+                    
+                        <text class="td-title">'.$song['album'].'</text>
+                        
+                        <text id="id-tracktime'.$index.'" class="td-track-time"></text>
+                    
+                </div>
+            
+            </div>
+            
         </li>
     ';
+    
     ++$index;
 }
+echo '</div>
 
-echo '</ul>';
+</ul>';

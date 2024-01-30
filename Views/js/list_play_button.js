@@ -4,32 +4,11 @@ let first_entry = true;
 let id_current = '';
 let id_prev = '';
 let my_audios = document.getElementsByClassName('audio_class');
-let icons = document.getElementsByClassName('list_play_icon');
+let icons = document.getElementsByClassName('list-play-icon');
+let tdTTs = document.getElementsByClassName('td-track-time');
 
 
-// POTREBUJE JESTE DOTAHNOUT
-
-function getCurrTime()
-{
-    let audio = my_audios[id_current];
-    let tracktime = document.getElementById('id-tracktime'+id_current);
-    
-    let time = Math.floor(audio.currentTime);
-    
-    if (time <= 9)
-    {
-        tracktime.innerHTML = '0:0'+time;
-    }
-    else if (time <= 59)
-    {
-        tracktime.innerHTML = '0:'+time;
-    }
-    else if (time >= 60)
-    {
-        tracktime.innerHTML = time/60+':'+Math.floor(time%60);
-    }
-}
-
+// ZACHYTAVANI KLIK EVENTU Z PLAY TL. A NASLEDNE ZPRACOVANI - SWITCHOVANI DVOU TL.
 
 function getElementId(evnt)
 {
@@ -172,4 +151,36 @@ function myEndCurrent()
     icons[id_current].src = pause_icon_path;
     
     setStateOnPauseCurrent();
+}
+
+
+// ELAPSED TIME / DURATION
+
+function updateTrackTime(track)
+{
+    
+    let currTime = Math.floor(track.currentTime).toString();
+    let duration = Math.floor(track.duration).toString();
+    
+    currTime = formatSecondsAsTime(currTime);
+    duration = formatSecondsAsTime(duration);
+    
+    tdTTs[id_current].innerHTML = currTime +'/'+ duration;
+    
+    
+}
+
+function formatSecondsAsTime(secs) {
+    
+    let hr  = Math.floor(secs / 3600);
+    let min = Math.floor((secs - (hr * 3600))/60);
+    let sec = Math.floor(secs - (hr * 3600) -  (min * 60));
+    
+    if (min < 10){
+        min = "0" + min;
+    }
+    if (sec < 10){
+        sec  = "0" + sec;
+    }
+    return min + ':' + sec;
 }

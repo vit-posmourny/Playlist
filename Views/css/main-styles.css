@@ -20,6 +20,7 @@ body {
     width: 100vw;
     margin: 0;
     background-color: #262626;
+    overflow: hidden;
 }
 
 
@@ -90,9 +91,10 @@ body {
 
 
 .nav-right {
+    display: flex;
+    flex-direction: column;
     width: 30vw;
     background-color: #5e5e5e;
-    clip-path: content-box;
     background: var(--background-main);
 }
 
