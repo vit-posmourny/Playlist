@@ -9,23 +9,36 @@ use App\Services\Auth;
 class LoginController
 {
     
-    public User $userModel;
+    public User $userObj;
     
     // Tady budou jen hlášky, které se vrací ze serveru do PC
     public $errors =  [
-        "wrong_credentials" => "Špatné přihlašovací údaje.",
+        "wrong_email" => "Uživatel s tímto e-mailem nenalezen.",
+        "wrong_password " => "Uživatel s tímto heslem nenalezen.",
     ];
     
     // KONSTRUKTOR
     public function __construct()
     {
-        $this->userModel = new User();
+        $this->userObj = new User();
     }
     
     
     public function showLogin()
     {
         $error = $_GET['error'] ?? null;
+        
+        
+        if($userToken = array($_COOKIE['remember_token'] ?? null))
+        {
+            $userData = $this->userObj->findUserToken($userToken);
+            
+            
+            if ($userToken[0] && $userData['remember_token']) {
+                Auth::login($userData);
+                header('location: /Playlist');
+            }
+        }
         
         return View::render('login', [
             'title' => "Login",
@@ -34,32 +47,40 @@ class LoginController
     }
     
     
-    public function loginUser($data)
+    public function loginUser(array $data): void
     {
         // z formuláře nám přijde email a heslo
-        
         // vezmeme email a najdeme usera a u něj zjistíme heslo
-        $user = $this->userModel->emailExists($data['email']);
+        $user = $this->userObj->emailExists($data['email']);
         
+//        if(1)
         
-        if ($user){
-            
             // vezmeme heslo z databáze (hash) a heslo z formuláře a proženeme to password_verify
             if (password_verify($data['password'], $user['password']))
             {
-                Auth::login($user);
-                 
-                return header('location: /Playlist/');
                 
-            } else {
                 
-                return header('location: /Playlist/login?error=wrong_credentials');
+                if ($data['checkbox'])
+                {
+                    $userToken = bin2hex(random_bytes(32));
+                    // mozna zjistovat jestli operace probehla?
+                    $this->userObj->setUserToken($data['id'], $userToken);
+                    
+                    setcookie("remember_token", $userToken, time() + (86400 * 30), "/");
+                    
+                    Auth::login($user);
+                    header('location: /Playlist');
+                }
+                else {
+                    Auth::login($user);
+                    header('location: /Playlist');
+                }
             }
-        } else {
-            
-            return header('location: /Playlist/login?error=wrong_credentials');
-        }
+            header('location: /Playlist/login?error=wrong_password');
+        
+        header('location: /Playlist/login?error=wrong_email');
     }
+        
     
     
     public function logout()

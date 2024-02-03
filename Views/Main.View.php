@@ -1,5 +1,12 @@
 <?php
 //    setcookie('remember_token', $_SESSION['remember_token'], time() + (86400 * 30), "/"); // 86400 = 1 day
+
+if(!isset($_COOKIE['remember_token']))
+{
+    header('location: /Playlist/login');
+}
+
+
 ?>
 <?php Core\View::render('partials/header', ['title' => $title ?? 'Playlist']); ?>
 
@@ -15,7 +22,7 @@
         <div class="nav-left-upper">
             
                 <button id="id-user-btn" class="button-main width">ID: <?php echo $_SESSION['user_id'];?></button>
-                <button id="id-logout-btn" type="submit" class="button-main width"><?php echo $_SESSION['user_email'];?></button>
+                <button id="id-logout-btn" type="button" class="button-main width"><?php echo $_SESSION['user_email'];?></button>
                 <button class="button-main width">Token: <?php echo $_SESSION['remember_token'];?></button>
         
         </div>

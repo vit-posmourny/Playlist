@@ -6,23 +6,21 @@ class Auth
 {
     public static function user()
     {
-//      return verifyToken($data);
         return $_SESSION['user_id'];
     }
     
 
-    public static function login($user)
+    public static function login($userData)
     {
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['user_email'] = $user['email'];
-        $_SESSION['remember_token'] = $user['remember_token'];
-        // tohle jsem drive daval nad <body> na main a nebo na login - mozna to je cesta,
-        // zde to asi ani nema byt
-        setcookie('remember_token', $_SESSION['remember_token'], time() + (86400 * 30), "/"); // 86400 = 1 day
+        $_SESSION['user_id'] = $userData['id'];
+        $_SESSION['user_email'] = $userData['email'];
+        $_SESSION['remember_token'] = $userData['remember_token'];
+        setcookie('remember_token', $userData['remember_token'], time() + (86400 * 30), "/");
     }
 
     public static function logout()
     {
+        setcookie('remember_token', time() - 3600);
         session_unset();
         session_destroy();
     }

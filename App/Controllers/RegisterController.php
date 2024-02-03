@@ -9,7 +9,7 @@ use App\Services\Auth;
 class RegisterController
 {
     
-    public User $userModel;
+    protected User $userObj;
     
     // Tady budou jen hlášky, které se vrací ze serveru do PC
     public $errors =  [
@@ -20,11 +20,11 @@ class RegisterController
     // KONSTRUKTOR
     public function __construct()
     {
-        $this->userModel = new User();
+        $this->userObj = new User();
     }
     
     
-    public function showRegisterForm()
+    public function showRegisterForm(): View
     {
         $error = $_GET['error'] ?? null;
         
@@ -37,7 +37,7 @@ class RegisterController
     
     public function registerUser($data)
     {
-        $user = $this->userModel->emailExists($data['email']);
+        $user = $this->userObj->emailExists($data['email']);
         
         if ($user) {
            
@@ -45,8 +45,8 @@ class RegisterController
             
         } else {
           
-            $this->userModel->create($data);
-            $registered_user = $this->userModel->emailExists($data['email']);
+            $this->userObj->create($data);
+            $registered_user = $this->userObj->emailExists($data['email']);
             
             Auth::login($registered_user);
             

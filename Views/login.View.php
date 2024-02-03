@@ -33,6 +33,8 @@
             
             <div class="form__footer">
                 
+                <p>Zapamatovat si přihlášení</p><input type="checkbox" name="checkbox" value="true">
+                
                 <p>Nemáte účet?  <a href="/Playlist/register">Vytvořte si ho</a></p>
                 
             </div>

@@ -156,10 +156,10 @@ function myEndCurrent()
 
 // ELAPSED TIME / DURATION
 
-function updateTrackTime(track)
+function updateTrackTime(audio)
 {
-    let currTime = Math.floor(track.currentTime).toString();
-    let duration = Math.floor(track.duration).toString();
+    let currTime = Math.floor(audio.currentTime).toString();
+    let duration = Math.floor(audio.duration).toString();
     
     currTime = formatSecondsAsTime(currTime);
     duration = formatSecondsAsTime(duration);
