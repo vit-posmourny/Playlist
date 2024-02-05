@@ -12,9 +12,10 @@ class Model
         $this->database = new Database();
     }
     
-    public function all(): array
+    public function all()
     {
-        return $this->database->query("SELECT * FROM $this->table");
+        $stmt = $this->database->query("SELECT * FROM $this->table");
+        return $stmt->fetchAll();
     }
     
     public function find(int $id): array

@@ -23,31 +23,28 @@ class User extends Model
     }
     
     
-    public function emailExists($email): false|array|\PDOStatement
+    public function emailExists($data)
     {
-        return $this->database->query("SELECT * FROM $this->table WHERE email = $email");
-        /*die(var_dump($arr));*/
+        $assocArr = array('email' => $data['email']);
+
+        $stmt = $this->database->query("SELECT * FROM ".$this->table." WHERE email = ?", $assocArr);
+        
+        return $stmt->fetch();
     }
     
     
     public function findUserToken(array $userToken): false|array|\PDOStatement
     {
-        $stmp = $this->database->query("SELECT * FROM $this->table WHERE remember_token = ?", $userToken);
-        
-        $resultArr = array();
-        foreach ($stmp as $item)
-        {
-            array_push($resultArr, $item);
-        }
-        
-        return $resultArr[0];
+        $stmt = $this->database->query("SELECT * FROM $this->table WHERE remember_token = ?", $userToken);
+        return $stmt->fetch();
     }
     
     
 
-    public function setUserToken($userToken, $user_id)
+    public function setUserToken($userToken, $data)
     {
-        $arr = array($userToken, $user_id);
-        return $this->database->query("UPDATE $this->table SET remember_token = ? WHERE id = ?", $arr);
+        $assocArr = array('remember_token' => $userToken, 'email' => $data['email']);
+        
+        $this->database->query("UPDATE $this->table SET remember_token = ? WHERE id = ?", $assocArr);
     }
 }

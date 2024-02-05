@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers;
+
 use App\Services\Auth;
 use Core\View;
 use App\Models\Playlist;
@@ -17,24 +18,30 @@ class MainController
         $this->userObj = new User();
     }
     
-   
+    
     public function index()
     {
-       
-        $userToken = array($_COOKIE['remember_token'] ?? null);
-        
-        // Později můžeš zaobalit kdyby user měl SESSION:  if (Auth::user())
-        if ($userToken[0] && $this->userObj->findUserToken($userToken)
-       {
-            return View::render('Main', [
+        // Co kdyz tam nedam ?? null
+        if ($userTokenArr = array($_COOKIE['remember_token'] ?? null))
+        {
+            $user = $this->userObj->findUserToken($userTokenArr);
+            
+            if ($userTokenArr[0] && $user['remember_token'])
+            {
+                Auth::login($user);
                 
-                'title' => 'Playlist',
-                'playlist' => $this->playlist->all(),
-            ]);
-       }
-       else {
-        
-        return header('location: /Playlist/login');
-      }
+                return View::render('Main', [
+                    'title' => 'Playlist',
+                    'playlist' => $this->playlist->all(),
+                ]);
+                
+            } else {
+                
+                header('location: /Playlist/login');
+            }
+            
+        } header('location: /Playlist/login');
     }
 }
+
+//__________________________________ BORDEL _______________________________________

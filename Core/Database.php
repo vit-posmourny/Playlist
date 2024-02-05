@@ -22,7 +22,7 @@ class Database
         $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
         
         $options = [
-//            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES => false,
         ];
@@ -33,25 +33,17 @@ class Database
     
     public function query(string $query, array $values = null)
     {
-        
-        if ($values) {
-            $values = array_values($values);
-            /*die($values[0]);*/
-            $stmp = $this->pdo->prepare($query);
-            $stmp->execute($values);
-        } else {
+        if ($values)
+        {
+            $array = array_values($values);
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute($array);
             
-            $stmp = $this->pdo->query($query)->fetchAll();
+            return $stmt;
         }
-        $resultArr = array();
-//        $result = $stmp->fetch(PDO::FETCH_ASSOC);
-//        foreach ($stmp as $item)
-//        {
-//           array_push($resultArr, $item);
-//        }
         
-//        die(var_dump($resultArr[0]));
-        /*return $resultArr;*/
-        return $stmp;
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+        return $stmt;
     }
 }

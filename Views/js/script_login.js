@@ -58,3 +58,11 @@ function passValidate()
     }
 
 }
+
+function checkbox(elem)
+{
+  
+    {
+        elem.value ? this.value='false' : this.value='true'
+    }
+}

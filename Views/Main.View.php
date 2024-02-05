@@ -1,13 +1,5 @@
-<?php
-//    setcookie('remember_token', $_SESSION['remember_token'], time() + (86400 * 30), "/"); // 86400 = 1 day
+<!----------------------------------- HEADER ------------------------------->
 
-if(!isset($_COOKIE['remember_token']))
-{
-    header('location: /Playlist/login');
-}
-
-
-?>
 <?php Core\View::render('partials/header', ['title' => $title ?? 'Playlist']); ?>
 
 <body>
@@ -21,9 +13,11 @@ if(!isset($_COOKIE['remember_token']))
         
         <div class="nav-left-upper">
             
-                <button id="id-user-btn" class="button-main width">ID: <?php echo $_SESSION['user_id'];?></button>
-                <button id="id-logout-btn" type="button" class="button-main width"><?php echo $_SESSION['user_email'];?></button>
-                <button class="button-main width">Token: <?php echo $_SESSION['remember_token'];?></button>
+            <button id="id-user-btn" class="button-main width">ID: <?php echo $_SESSION['user_id'];?></button>
+            
+            <button id="id-logout-btn" type="button" class="button-main width"><?php echo $_SESSION['user_email'];?></button>
+            
+            <button class="button-main width">Token: <?php echo $_SESSION['remember_token'];?></button>
         
         </div>
         
@@ -42,9 +36,9 @@ if(!isset($_COOKIE['remember_token']))
         
         <nav class="nav-central-top">
             
-            <a href="\Playlist\register"><button id="id-btn-reg" class="button-main">Registrace</button></a>
+            <a href="/Playlist/register"><button id="id-btn-reg" class="button-main">Registrace</button></a>
             
-            <button class="button-main width" types="submit" formaction="/Playlist/login/logout/">LogOut</button>
+            <button class="button-main width" onclick=<?php header('location: /Playlist/login'); ?>type="button">LogOut</button>
             
             <a href="/Playlist/login"><button id="id-btn-login" class="button-main">Přihlášení</button></a>
             
@@ -64,7 +58,7 @@ if(!isset($_COOKIE['remember_token']))
         <?php include "partials/playlist.php"; ?>
 
     </div>
-
+php
 </main>
 
 <!------------------------------ FOOTER -------------------------------->
