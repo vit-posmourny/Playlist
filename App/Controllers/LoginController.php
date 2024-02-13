@@ -28,52 +28,65 @@ class LoginController
     {
         $error = $_GET['error'] ?? null;
         
-        // Kdyz by nemel token a odmazes ?? null co se stane
-        if ($_COOKIE['remember_token'] ?? null)
+        if ($userToken = $_COOKIE['remember_token'] ?? null)
         {
-            header('location: /Playlist');
+            if ($user = $this->userObj->validUserToken($userToken))
+            {
+                Auth::login($user);
+                header('location: /Playlist/playlist');
+            }
         }
-        
         return View::render('login', [
             'title' => "Login",
             'error' => $this->errors[$error] ?? "",
         ]);
     }
+        
+    
     
     
     public function loginUser(array $data): void
     {
-        if($user = $this->userObj->emailExists($data));
+        
+        if ($this->userObj->emailExists($data))
         {
-            
+            $password = $this->userObj->getUserPassword($data);
             // vezmeme heslo z databáze (hash) a heslo z formuláře a proženeme to password_verify
-            if (password_verify($data['password'], $user['password']))
+            if (password_verify($data['password'], $password))
             {
-                die($data['checkbox']);
-                if ($data['checkbox']) {
+                
+                if ($data['hidden-checkbox'] === 'true')
+                {
                     
                     $userToken = bin2hex(random_bytes(32));
                     // mozna zjistovat jestli operace probehla?
-                    $this->userObj->setUserToken($data, $userToken);
-                    
-                    
-                    Auth::login($user);
-                    header('location: /Playlist');
-                    
-                } else {
+                    $user = $this->userObj->setUserToken($data, $userToken);
                     
                     Auth::login($user);
-                    header('location: /Playlist');
+                    header('location: /Playlist/playlist');
                 }
-                header('location: /Playlist/login?error=wrong_password');
+                else
+                {
+                    Auth::login($user);
+                    header('location: /Playlist/playlist');
+                }
             }
-        } header('location: /Playlist/login?error=wrong_email');
+            else
+            {
+                header('location: /Playlist/playlist/login?error=wrong_password');
+            }
+        }
+        else
+        {
+            header('location: /Playlist/playlist/login?error=wrong_email');
+        }
     }
         
     
     
     public function logout()
-    {
+    { 
         Auth::logout();
+        $this->showLogin();
     }
 }

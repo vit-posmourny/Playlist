@@ -33,7 +33,7 @@
             
             <div class="form__footer">
                 
-                <p>Již máte účet?  <a href="/Playlist/login">Přihlaste se</a></p>
+                <p>Již máte účet?  <a href="/Playlist/">Přihlaste se</a></p>
                 
             </div>
             

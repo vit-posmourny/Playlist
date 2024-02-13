@@ -82,7 +82,6 @@ body {
     display: flex;
     flex-direction: column;
     width: 50vw;
-    /*background: var(--background-temp);*/
 }
 
 
@@ -118,11 +117,22 @@ div.central-bottom
 }
 
 
-.foot-bottom{
+.foot-bottom {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 11vw;
     background: var(--background-main-3x);
+}
+
+.btn-logout-width {
+
+    width: 100%;
+}
+
+/*/////////////////////////// ID`s //////////////////////////////*/
+
+#a-logout {
+    width: 100%;
 }

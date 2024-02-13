@@ -1,5 +1,5 @@
-let play_icon_path = 'images/pause_circle_FILL0_wght300_GRAD0_opsz24.svg';
-let pause_icon_path = 'images/play_circle_FILL0_wght300_GRAD0_opsz24.svg';
+let play_icon_path = 'images/play_circle_FILL0_wght300_GRAD0_opsz24.svg';
+let pause_icon_path = 'images/pause_circle_FILL0_wght300_GRAD0_opsz24.svg';
 let first_entry = true;
 let id_current = '';
 let id_prev = '';

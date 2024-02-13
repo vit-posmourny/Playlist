@@ -1,5 +1,4 @@
 <?php
-//use app\controllers;
 
     spl_autoload_register(function ($class) {
         $prefix = '';

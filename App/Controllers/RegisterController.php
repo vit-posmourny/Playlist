@@ -24,11 +24,11 @@ class RegisterController
     }
     
     
-    public function showRegisterForm(): View
+    public function showRegisterForm(): void
     {
         $error = $_GET['error'] ?? null;
         
-        return View::render('register', [
+        View::render('register', [
             'title' => "Registrace",
             'error' => $this->errors[$error] ?? "",
         ]);

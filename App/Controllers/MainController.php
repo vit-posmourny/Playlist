@@ -19,29 +19,14 @@ class MainController
     }
     
     
-    public function index()
+    public function Playlist()
     {
-        // Co kdyz tam nedam ?? null
-        if ($userTokenArr = array($_COOKIE['remember_token'] ?? null))
-        {
-            $user = $this->userObj->findUserToken($userTokenArr);
-            
-            if ($userTokenArr[0] && $user['remember_token'])
-            {
-                Auth::login($user);
-                
-                return View::render('Main', [
-                    'title' => 'Playlist',
-                    'playlist' => $this->playlist->all(),
-                ]);
-                
-            } else {
-                
-                header('location: /Playlist/login');
-            }
-            
-        } header('location: /Playlist/login');
+        return View::render('Main', [
+            'title' => 'Playlist',
+            'playlist' => $this->playlist->all(),
+        ]);
     }
 }
+
 
 //__________________________________ BORDEL _______________________________________

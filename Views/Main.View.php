@@ -36,11 +36,11 @@
         
         <nav class="nav-central-top">
             
-            <a href="/Playlist/register"><button id="id-btn-reg" class="button-main">Registrace</button></a>
+            <a href="/Playlist/register"><button id="id-btn-register" class="button-main">Registrace</button></a>
             
-            <button class="button-main width" onclick=<?php header('location: /Playlist/login'); ?>type="button">LogOut</button>
+            <a id="a-logout" href="/Playlist/login/logout"><button class="button-main btn-logout-width" type="button">LogOut</button></a>
             
-            <a href="/Playlist/login"><button id="id-btn-login" class="button-main">Přihlášení</button></a>
+            <a href="/Playlist/"><button id="id-btn-login" class="button-main">Přihlášení</button></a>
             
         </nav>
         
@@ -55,10 +55,10 @@
     
     <div class="nav-right">
 
-        <?php include "partials/playlist.php"; ?>
+        <?php include "partials/playlist_slot.php"; ?>
 
     </div>
-php
+
 </main>
 
 <!------------------------------ FOOTER -------------------------------->

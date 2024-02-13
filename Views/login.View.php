@@ -1,7 +1,4 @@
-<?php //  print_r($_COOKIE);
-//setcookie('remember_token', $_SESSION('remember_token'), time() + (86400 * 30), "/"); // 86400 = 1 day
-?>
-
+<?php $_POST['login-checkbox'] = false; ?>
 <?php Core\View::render('partials/header', ['title' => $title ?? 'Login']); ?>
 
 <body >
@@ -24,6 +21,8 @@
             
                 <p id="id-all-err" class="form__error-message"></p>
             
+            <input id="id-hidden-checkbox" type="hidden" name="hidden-checkbox" value='false'>
+            
                 <?php
                 if(isset($error))
                 {
@@ -31,11 +30,10 @@
                 }
                 ?>
             
+            
             <div class="form__footer">
                 
-                <p>Zapamatovat si přihlášení</p><input type="checkbox" name="checkbox" value="false"
-                onclick="this.value ? this.value='false' : this.value='true'">
-                
+                <p>Zapamatovat si přihlášení</p><input id="id-checkbox" type="checkbox" name="login-checkbox" value='false'>
                 <p>Nemáte účet?  <a href="/Playlist/register">Vytvořte si ho</a></p>
                 
             </div>

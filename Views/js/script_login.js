@@ -1,6 +1,8 @@
 let email = document.getElementById('id_input_email');
 let pass = document.getElementById('id_input_pass');
 let loginBtn = document.getElementById('id-btn-login');
+let checkbox = document.getElementById('id-checkbox');
+let hiddenCheckbox = document.getElementById('id-hidden-checkbox');
 
 
 let emailValidState = false;
@@ -10,8 +12,25 @@ let passValidState = false;
 email.addEventListener("change", emailValidate);
 pass.addEventListener("change", passValidate);
 loginBtn.addEventListener("click", checkAllStates);
+checkbox.addEventListener("change", checkboxF);
 
 
+
+function checkboxF()
+{
+    
+    if (this.value === 'false')
+    {
+        this.value = 'true';
+        hiddenCheckbox.value = 'true';
+    }
+    else {
+        this.value = 'false';
+        hiddenCheckbox.value = 'false';
+    }
+    
+    
+}
 
 function checkAllStates() {
     
@@ -27,6 +46,8 @@ function checkAllStates() {
     }
     
 }
+
+
 function emailValidate()
 {
     if (!(this.value.includes('@') && this.value.includes('.')))
@@ -43,6 +64,7 @@ function emailValidate()
 
 }
 
+
 function passValidate()
 {
     if (this.value.length < 8)
@@ -57,12 +79,4 @@ function passValidate()
         passValidState = true;
     }
 
-}
-
-function checkbox(elem)
-{
-  
-    {
-        elem.value ? this.value='false' : this.value='true'
-    }
 }
