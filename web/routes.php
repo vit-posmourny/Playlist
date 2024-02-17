@@ -26,6 +26,6 @@
     // die($_SERVER['REQUEST_URI']);
     // die($currentUrl);
     // $currentUrl = parse_url($currentUrl)['path'];
-    
+
     //spusť metodu pro tuto URL na konkrétním kontroleru
     $router->dispatch($currentUrl);

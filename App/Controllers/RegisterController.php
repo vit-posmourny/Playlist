@@ -39,8 +39,8 @@ class RegisterController
     {
         $user = $this->userObj->emailExists($data['email']);
         
-        if ($user) {
-           
+        if ($user)
+        {
             return header('location: /Playlist/register?error=user_exists');
             
         } else {

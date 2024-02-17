@@ -1,6 +1,6 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');*/
 
-:root{
+:root {
     --primary: #0070C9;
     --success: #00BA88;
     --error: #FA3C6A;
@@ -19,14 +19,14 @@ body {
     background: var(--background-main);
 }
 
-a{
+a {
     color: var(--primary);
     font-weight: 400;
     text-decoration: none;
     transition: text-decoration 5s ease-in-out;
 }
 
-p{
+p {
     font-size: 0.8rem;
 }
 

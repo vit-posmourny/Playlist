@@ -9,15 +9,17 @@ use App\Models\User;
 
 class MainController
 {
+
     protected Playlist $playlist;
     protected User $userObj;
-    
+
     public function __construct()
     {
         $this->playlist = new Playlist();
         $this->userObj = new User();
     }
-    
+
+
     
     public function Playlist()
     {
@@ -27,6 +29,5 @@ class MainController
         ]);
     }
 }
-
 
 //__________________________________ BORDEL _______________________________________

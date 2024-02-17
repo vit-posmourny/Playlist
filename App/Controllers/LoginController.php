@@ -26,8 +26,10 @@ class LoginController
     
     public function showLogin()
     {
+
         $error = $_GET['error'] ?? null;
-        
+
+        // Když bude mít platnej token, tak je přesměrován na playlist
         if ($userToken = $_COOKIE['remember_token'] ?? null)
         {
             if ($user = $this->userObj->validUserToken($userToken))
@@ -47,19 +49,25 @@ class LoginController
     
     public function loginUser(array $data): void
     {
+
+        $_SESSION['user_id'] = $this->userObj->getUserID($data);
+
         
         if ($this->userObj->emailExists($data))
         {
+            // tohle v if($_SESSION['wrong_email'] = "") je vyhodnoceno jako NULL
+            $_SESSION['wrong_email'] = "";
+            
             $password = $this->userObj->getUserPassword($data);
             // vezmeme heslo z databáze (hash) a heslo z formuláře a proženeme to password_verify
             if (password_verify($data['password'], $password))
             {
+                $_SESSION['wrong_password'] = "";
                 
                 if ($data['hidden-checkbox'] === 'true')
                 {
                     
                     $userToken = bin2hex(random_bytes(32));
-                    // mozna zjistovat jestli operace probehla?
                     $user = $this->userObj->setUserToken($data, $userToken);
                     
                     Auth::login($user);
@@ -73,19 +81,23 @@ class LoginController
             }
             else
             {
-                header('location: /Playlist/playlist/login?error=wrong_password');
+                // wrong_password
+                $_SESSION['wrong_password'] = "Uživatel s tímto heslem nenalezen.";
+                header('location: /Playlist/');
             }
         }
         else
         {
-            header('location: /Playlist/playlist/login?error=wrong_email');
+            // wrong_email
+            $_SESSION['wrong_email'] = "Uživatel s tímto e-mailem nenalezen.";
+            header('location: /Playlist/');
         }
     }
         
     
     
     public function logout()
-    { 
+    {
         Auth::logout();
         $this->showLogin();
     }

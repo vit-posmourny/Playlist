@@ -64,7 +64,7 @@
     overflow: hidden;
 }
 
-.song-text-area {
+.slot-text-area {
     display: flex;
     flex-direction: column;
 }
@@ -84,7 +84,8 @@
 
 table {
     white-space: nowrap;
-    width: 240;
+    /*FIXme width: 240px; */
+    width: 240px;
 }
 
 td {

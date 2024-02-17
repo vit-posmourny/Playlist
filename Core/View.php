@@ -11,7 +11,6 @@ class View
             $variable_name = $variable_name;
             $$variable_name = $variable;
         }
-        
         return require_once "Views/" . $viewName . ".View.php";
     }
 }

@@ -28,9 +28,8 @@ function checkboxF()
         this.value = 'false';
         hiddenCheckbox.value = 'false';
     }
-    
-    
 }
+
 
 function checkAllStates() {
     
@@ -44,7 +43,6 @@ function checkAllStates() {
         
         document.getElementById('id-all-err').innerHTML = "Vyplňte prosím všechny údaje.";
     }
-    
 }
 
 
@@ -61,7 +59,6 @@ function emailValidate()
         this.classList.remove('input--error');
         emailValidState = true;
     }
-
 }
 
 
@@ -78,5 +75,4 @@ function passValidate()
         this.classList.remove('input--error');
         passValidState = true;
     }
-
 }

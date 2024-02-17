@@ -9,30 +9,30 @@ echo '<ul class="playlist-main mask">
         <div class="div-for-li">';
 
 
-foreach ($playlist as $song)
+foreach ($playlist as $slot)
 {
     echo '
         <li class="playlist-item">
         
             <audio id="myAudio'.$index.'" ontimeupdate="updateTrackTime(this)" class="state_pause audio_class"
             
-                    src="'.$song['track_path'].'">
+                    src="'.$slot['track_path'].'">
                     
             </audio>
             
-            <img class="playlist-img img" src="'.$song['img_path'].'" alt="cover">
+            <img class="playlist-img img" src="'.$slot['img_path'].'" alt="cover">
             
             <img id="'.$index.'" class="list-play-icon" onclick="getElementId(event);"
             
-                    src="'.$playicon.'" data-track-path="'.$song['track_path'].' alt="play-icon">
+                    src="'.$playicon.'" data-track-path="'.$slot['track_path'].' alt="play-icon">
             
-            <div class="song-text-area">
+            <div class="slot-text-area">
             
-                <b class="track-name">'.$song['track_name'].'</b>
+                <b class="track-name">'.$slot['track_name'].'</b>
                 
                 <div class="inlineFlex">
                     
-                        <text class="td-title">'.$song['album'].'</text>
+                        <text class="td-title">'.$slot['album'].'</text>
                         
                         <text id="id-tracktime'.$index.'" class="td-track-time"></text>
                     
@@ -42,7 +42,6 @@ foreach ($playlist as $song)
             
         </li>
     ';
-    
     ++$index;
 }
 echo '</div>

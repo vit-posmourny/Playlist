@@ -12,13 +12,13 @@
     <nav class="nav-left">
         
         <div class="nav-left-upper">
+
+            <button id="id-user-btn" class="button-main width">ID: <?php if (!$_SESSION['logout']) {echo $_SESSION['user_id'];}?></button>
             
-            <button id="id-user-btn" class="button-main width">ID: <?php echo $_SESSION['user_id'];?></button>
+            <button id="id-logout-btn" type="button" class="button-main width"><?php if (!$_SESSION['logout']) {echo $_SESSION['user_email'];}?></button>
             
-            <button id="id-logout-btn" type="button" class="button-main width"><?php echo $_SESSION['user_email'];?></button>
-            
-            <button class="button-main width">Token: <?php echo $_SESSION['remember_token'];?></button>
-        
+            <button class="button-main width">Token: <?php if (!$_SESSION['logout']) {echo $_SESSION['remember_token'];}?></button>
+
         </div>
         
         <div class="nav-left-bottom">
@@ -55,7 +55,12 @@
     
     <div class="nav-right">
 
-        <?php include "partials/playlist_slot.php"; ?>
+        <?php
+            if (!$_SESSION['logout'])
+            {
+                include "partials/playlist_slot.php";
+            }
+        ?>
 
     </div>
 

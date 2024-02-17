@@ -4,7 +4,6 @@ namespace Core;
 
 use PDO;
 
-
 class Database
 {
     public PDO $pdo;
@@ -26,7 +25,6 @@ class Database
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES => false,
         ];
-        
         $this->pdo = new PDO($dsn, $user, $pass, $options);
     }
     
@@ -38,10 +36,8 @@ class Database
             $array = array_values($values);
             $stmt = $this->pdo->prepare($query);
             $stmt->execute($array);
-            
             return $stmt;
         }
-        
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
         return $stmt;

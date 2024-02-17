@@ -7,7 +7,7 @@ use Core\Model;
 class User extends Model
 {
     protected $table = "users";
-    
+
 
     public function create($data)
     {
@@ -23,17 +23,33 @@ class User extends Model
     }
     
     
-    public function emailExists($data)
+    public function emailExists($data): bool
     {
         $assocArr = array('email' => $data['email']);
         
-        $stmt = $this->database->query("SELECT * FROM " . $this->table . " WHERE email = ?", $assocArr);
+        $stmt = $this->database->query("SELECT email FROM " . $this->table . " WHERE email = ?", $assocArr);
         
-        if ($stmt->fetch()['email'] === $data['email'])
+        if ($result = $stmt->fetch())
         {
             return true;
         }
-        return false;
+        return $result;
+    }
+    
+    
+    public function getUserID($data): int|false
+    {
+        $assocArr = array('email' => $data['email']);
+        
+        $stmt = $this->database->query("SELECT id FROM " . $this->table . " WHERE email = ?", $assocArr);
+        
+        $result = $stmt->fetch();
+        
+        if ($result)
+        {
+            return $result['id'];
+        }
+        return $result;
     }
     
     
@@ -42,7 +58,7 @@ class User extends Model
         $assocArr = array('email' => $data['email']);
         
         $stmt = $this->database->query("SELECT password FROM " . $this->table . " WHERE email = ?", $assocArr);
-        
+
         return $stmt->fetch()['password'];
     }
     
@@ -70,7 +86,8 @@ class User extends Model
             
             return $user;
         }
-        else {
+        else
+        {
             return false;
         }
     }
