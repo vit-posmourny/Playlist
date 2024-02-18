@@ -14,18 +14,37 @@ class User extends Model
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
         
         $token = bin2hex(random_bytes(32));
+        $data['remember_token'] = $token;
 
-        $token_arr = array('remember_token' => $token);
-        $data = array_push($data, $token_arr);
-        
-        return $this->database->query("INSERT INTO $this->table (email, password, remember_token)
+        $stmt = $this->database->query("INSERT INTO $this->table (email, password, remember_token)
         VALUES (?, ?, ?)", $data);
+
+        if (!$stmt)
+        {
+            return false;
+        }
+        return $this->getUser($data['email']);
     }
     
     
-    public function emailExists($data): bool
+    
+    public function getUser($email): false|array
     {
-        $assocArr = array('email' => $data['email']);
+        $email = array($email);
+        $stmt = $this->database->query("SELECT * FROM $this->table WHERE email = ?", $email);
+        
+        if (!$stmt)
+        {
+            return false;    
+        }
+        return $stmt->fetch();
+    }
+    
+    
+    
+    public function emailExists($email): bool
+    {
+        $assocArr['email'] = $email;
         
         $stmt = $this->database->query("SELECT email FROM " . $this->table . " WHERE email = ?", $assocArr);
         
@@ -35,6 +54,7 @@ class User extends Model
         }
         return $result;
     }
+    
     
     
     public function getUserID($data): int|false

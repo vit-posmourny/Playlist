@@ -53,7 +53,7 @@ class LoginController
         $_SESSION['user_id'] = $this->userObj->getUserID($data);
 
         
-        if ($this->userObj->emailExists($data))
+        if ($this->userObj->emailExists($data['email']))
         {
             // tohle v if($_SESSION['wrong_email'] = "") je vyhodnoceno jako NULL
             $_SESSION['wrong_email'] = "";

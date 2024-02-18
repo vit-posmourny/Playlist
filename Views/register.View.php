@@ -10,7 +10,7 @@
             
             <input id="id_input_email" type="text" name="email" placeholder="Email" >
             
-                <p id="id-mail-err" class="form__error-message"></p>
+                <p id="id-mail-err" class="form__error-message"><?php echo $_SESSION['email_exists']?></p>
             
             <input id="id_input_pass" type="text" name="password" placeholder="Heslo">
             
@@ -23,14 +23,7 @@
             <button id="id-btn-register" class="button-main" type="button">Vytvořit účet</button>
             
                 <p id="id-all-err" class="form__error-message"></p>
-            
-                <?php
-                if(isset($error))
-                {
-                    echo'<p class="form__error-message">'.$error.'</p>';
-                }
-                ?>
-            
+
             <div class="form__footer">
                 
                 <p>Již máte účet?  <a href="/Playlist/">Přihlaste se</a></p>

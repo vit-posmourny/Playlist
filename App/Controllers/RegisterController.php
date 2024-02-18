@@ -37,18 +37,18 @@ class RegisterController
     
     public function registerUser($data)
     {
-        $user = $this->userObj->emailExists($data['email']);
+        // die(var_dump($data['email']));
+        $isEmail = $this->userObj->emailExists($data['email']);
         
-        if ($user)
+        if ($isEmail)
         {
-            return header('location: /Playlist/register?error=user_exists');
+            $_SESSION['email_exists'] = "Uživatel s tímto e-mailem již existuje.";
+            header('location: /Playlist/register');
             
         } else {
-          
-            $this->userObj->create($data);
-            $registered_user = $this->userObj->emailExists($data['email']);
-            
-            Auth::login($registered_user);
+
+            $user = $this->userObj->create($data);
+            Auth::login($user);
             
             return header('location: /Playlist/');
         }

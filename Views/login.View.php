@@ -11,11 +11,11 @@
             
             <input id="id_input_email" name="email" type="text" placeholder="Email">
             
-                <p id="id-mail-err" class="form__error-message"><?php echo $_SESSION['wrong_email']; ?></p>
+                <p id="id-mail-err" class="form__error-message"><?php echo $_SESSION['wrong_email'];?></p>
             
             <input id="id_input_pass" name="password" type="text" placeholder="Heslo">
             
-                <p id="id-pass-err" class="form__error-message"><?php echo $_SESSION['wrong_password']; ?></p>
+                <p id="id-pass-err" class="form__error-message"><?php echo $_SESSION['wrong_password'];?></p>
                     
             <button id="id-btn-login" class="button-main" type="button">Přihlášení</button>
             

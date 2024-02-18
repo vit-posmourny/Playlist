@@ -2,7 +2,7 @@ let email = document.getElementById('id_input_email');
 let pass = document.getElementById('id_input_pass');
 let pass2 = document.getElementById('id_input_pass2');
 let registerBtn = document.getElementById('id-btn-register');
-
+let registerForm = document.getElementById('id_form_register');
 
 let emailValidState = false;
 let passValidState = false;
@@ -16,39 +16,39 @@ registerBtn.addEventListener("click", checkAllStates);
 
 
 
-function checkAllStates() {
-    
-    
+function checkAllStates()
+{
     if (emailValidState && passValidState && pass2ValidState)
     {
-        document.getElementById('id_form_register').setAttribute('action', "/Playlist/register");
+        registerForm.setAttribute('action', "/Playlist/register");
 
-        document.getElementById('id_form_register').submit();
+        registerForm.submit();
 
     } else {
-        
+
         document.getElementById('id-all-err').innerHTML = "Vyplňte prosím všechny údaje.";
     }
-
 }
+
+
+
 function emailValidate()
 {
     if (!(this.value.includes('@') && this.value.includes('.')))
     {
-        
         this.classList.add('input--error');
         document.getElementById('id-mail-err').innerHTML = 'Emailová adresa musí obsahovat @ a \".\".';
         emailValidState = false;
         
-
     } else {
-        
+
         this.classList.remove('input--error');
         emailValidState = true;
         document.getElementById('id-mail-err').innerHTML = '';
     }
-
 }
+
+
 
 function passValidate()
 {
@@ -64,8 +64,9 @@ function passValidate()
         document.getElementById('id-pass-err').innerHTML = '';
         passValidState = true;
     }
-
 }
+
+
 
 function pass2Validate() {
 
