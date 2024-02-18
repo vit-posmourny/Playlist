@@ -4,19 +4,18 @@
     --size-play-button: 40px;
 }
 
+
 * {
     box-sizing: border-box;
-}
-
-.img {
-    border-radius: 4px;
 }
 
 
 .playlist-img {
     height: 70px;
     width: 70px;
+    border-radius: 4px;
 }
+
 
 .list-play-icon {
     min-height: var(--size-play-button);
@@ -27,6 +26,7 @@
     cursor: pointer;
 }
 
+
 .playlist-main {
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@
     padding-inline: 0.5rem;
     font-family: 'Quicksand', sans-serif ;
     border-radius: 0.5rem;
-    box-shadow: inset 0 0 4px 3px #42A1ECFF;
+    box-shadow: var(--box-shadow);
     overflow-x: hidden;
 }
 
@@ -45,10 +45,12 @@
     mask-clip: fill-box;
 }
 
-.div-for-li {
-    overflow: overlay;
+
+.div-overflow-overlay {
+    overflow: auto;
     margin: 1px;
 }
+
 
 /*celý kontent <li>*/
 .playlist-item {
@@ -60,20 +62,23 @@
     padding: .2em 0.4em .3em 0.3em;
     border-bottom: .1em solid #d8d8d859 ;
     border-radius: 6px;
-    background-color: #5e5e5e;
+    background-color: var(--bg-main-gray);
     overflow: hidden;
 }
+
 
 .slot-text-area {
     display: flex;
     flex-direction: column;
 }
 
+
 .inlineFlex {
     display: flex;
     justify-content: space-between;
     width: 200px;
 }
+
 
 .track-name {
     font-size: 0.9em ;
@@ -82,15 +87,12 @@
     text-shadow: 1px 1px #2d2c2c;
 }
 
+
 table {
     white-space: nowrap;
-    /*FIXme width: 240px; */
     width: 240px;
 }
 
-td {
-    border-color: #006DBC;
-}
 
 .td-title {
     font-size: 0.8em ;
@@ -111,6 +113,7 @@ td {
     color: #42A1EC;
     letter-spacing: 1px;
 }
+
 
 ul {
     display: block;
