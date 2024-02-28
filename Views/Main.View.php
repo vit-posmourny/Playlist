@@ -11,9 +11,9 @@
     
     <nav class="nav-left">
         
-        <div class="nav-left-upper">
+        <div class="nav-left-upper mask">
             
-            <div class="div-left-upper mask">
+            <div class="div-left-upper">
 
                 <button id="id-user-btn" class="button-main width">ID: <?php if (!$_SESSION['logout']) {echo $_SESSION['user_id'];}?></button>
                 
@@ -26,9 +26,83 @@
         </div>
         
         <div class="nav-left-bottom">
-        
-        
-        
+            
+            <div class="div-left-bottom">
+            
+                <details>
+                    <summary>Summary</summary>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Summary</summary>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Summary</summary>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Summary</summary>
+                    <h1>Test headline</h1>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Summary</summary>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Summary</summary>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Summary</summary>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                </details>
+                
+            </div>
+            
         </div>
         
     </nav>

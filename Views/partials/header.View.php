@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/Playlist/Views/css/main-button-styles.css">
     <link rel="stylesheet" href="/Playlist/Views/css/playlist-styles.css">
     <link rel="stylesheet" href="/Playlist/Views/css/login-styles.css">
+    <link rel="stylesheet" href="/Playlist/Views/css/accord2-styles.css">
     
     <title><?php echo $title; ?></title>
 <head>
