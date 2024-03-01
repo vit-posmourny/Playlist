@@ -11,7 +11,7 @@
     
     <nav class="nav-left">
         
-        <div class="nav-left-upper mask">
+        <nav class="nav-left-upper mask">
             
             <div class="div-left-upper">
 
@@ -23,20 +23,20 @@
         
             </div>
             
-        </div>
+        </nav>
         
-        <div class="nav-left-bottom">
+        <nav class="nav-left-bottom">
             
-            <div class="div-left-bottom">
+            <nav class="nav-left-bottom-overflow disable-select">
             
                 <details>
-                    <summary>Summary</summary>
+                    <summary><h2>Summary</h2></summary>
                     <ul>
                         <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        <li> 2</li>
+                        <li> 3</li>
+                        <li> 4</li>
+                        <li> 5</li>
                     </ul>
                 </details>
                 <details>
@@ -101,9 +101,9 @@
                     </ul>
                 </details>
                 
-            </div>
+            </nav>
             
-        </div>
+        </nav>
         
     </nav>
     

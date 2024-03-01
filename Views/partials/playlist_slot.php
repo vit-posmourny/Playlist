@@ -6,7 +6,7 @@ $index = 0;
 
 echo '<ul class="playlist-main mask">
 
-        <div class="div-overflow-overlay">';
+        <div class="div-overflow-auto">';
 
 
 foreach ($playlist as $slot)

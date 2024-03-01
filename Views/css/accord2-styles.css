@@ -2,48 +2,55 @@
     --gradient-main-blue: linear-gradient(#42A1EC, #0070C9);
     --gradient-hover: linear-gradient(#51A9EE, #147BCD);
     --gradient-active: linear-gradient(#3D94D9, #0067B9) ;
-    --box-shadow-accord: inset 0 0px 4px 1px #626262;
+    --box-shadow-accord: inset 0 0px 2px 1px var(--primary);
     --box-shadow-accord-focus: rgba(131, 192, 253, 0.5) 0 0 0 1px;
     --box-shadow-details: 0 .1rem 1rem -.5rem rgba(0,0,0,.4);
     --text-color: #FFFFFF;
-    --border-active: #006DBC;
-    --border-hover: #1482D0;
-    --triangle-focus: #006693;
-    --triangle-norm: #084975;
-    --font-family: system-ui,"Helvetica Neue","Helvetica,Arial",sans-serif;
+    --font-family:"Franklin Gothic Book",sans-serif;
 }
 
 
 details {
-    width: 85%;
+    font-family: var(--font-family);
+    font-size: 0.6em;
+    width: 90%;
     margin: 0 auto ;
-    background: #282828;
+    background: var(--background-main-invert);
+    color: var(--text-color);
     margin-bottom: .5rem;
     box-shadow: var(--box-shadow-details);
     border-radius: 5px;
     overflow: hidden;
 }
-
 summary {
-    padding: 1rem;
+    padding-left: 30%;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1.1rem;
     display: block;
-    text-overflow: ellipsis;
+    color: var(--text-color);
     box-shadow: var(--box-shadow-accord);
     background: var(--gradient-main-blue);
-    border: 1px var(--border-active);
-    padding-left: 2.2rem;
+    text-overflow: ellipsis;
     position: relative;
+    top:50%;
     cursor: pointer;
     overflow: hidden;
+}
+
+summary h2 {
+    letter-spacing: 1px;
 }
 
 summary:hover {
     background: var(--gradient-hover);
 }
 
+
 summary:active {
     background: var(--gradient-active);
 }
+
 
 summary:before {
     content: '';
@@ -58,6 +65,12 @@ summary:before {
     transition: .25s transform ease;
 }
 
+
+summary > * {
+    display: inline;
+}
+
+
 /* THE MAGIC 🧙‍♀️ */
 details[open] > summary:before {
     transform: rotate(90deg);
@@ -68,19 +81,20 @@ details summary::-webkit-details-marker {
     display:none;
 }
 
+
 details > ul {
-    padding-bottom: 1rem;
-    margin-bottom: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
-/*///////////////////////////////////////*/
+li {
+    padding-left: 5%;
+}
 
-body {
-    background: #222;
-    height: 100vh;
-    font-family: sans-serif;
-    color: white;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    margin-top: 2rem;
+details > ul~li {
+    padding-top: 5%;
+}
+
+ul {
+ /*list-style-image: url("\Playlist\images\music_note_FILL0_wght100_GRAD0_opsz24.svg");*/
 }
