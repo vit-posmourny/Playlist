@@ -40,67 +40,65 @@
                     </ul>
                 </details>
                 <details>
-                    <summary>Summary</summary>
+                    <summary><h2>Summary</h2></summary>
                     <ul>
                         <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        <li> 2</li>
+                        <li> 3</li>
+                        <li> 4</li>
+                        <li> 5</li>
                     </ul>
                 </details>
                 <details>
-                    <summary>Summary</summary>
+                    <summary><h2>Summary</h2></summary>
                     <ul>
                         <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        <li> 2</li>
+                        <li> 3</li>
+                        <li> 4</li>
+                        <li> 5</li>
                     </ul>
                 </details>
                 <details>
-                    <summary>Summary</summary>
-                    <h1>Test headline</h1>
+                    <summary><h2>Summary</h2></summary>
                     <ul>
                         <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        <li> 2</li>
+                        <li> 3</li>
+                        <li> 4</li>
+                        <li> 5</li>
                     </ul>
                 </details>
                 <details>
-                    <summary>Summary</summary>
+                    <summary><h2>Summary</h2></summary>
                     <ul>
                         <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        <li> 2</li>
+                        <li> 3</li>
+                        <li> 4</li>
+                        <li> 5</li>
                     </ul>
                 </details>
                 <details>
-                    <summary>Summary</summary>
+                    <summary><h2>Summary</h2></summary>
                     <ul>
                         <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        <li> 2</li>
+                        <li> 3</li>
+                        <li> 4</li>
+                        <li> 5</li>
                     </ul>
                 </details>
                 <details>
-                    <summary>Summary</summary>
+                    <summary><h2>Summary</h2></summary>
                     <ul>
                         <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        <li> 2</li>
+                        <li> 3</li>
+                        <li> 4</li>
+                        <li> 5</li>
                     </ul>
                 </details>
-                
             </nav>
             
         </nav>
@@ -124,6 +122,8 @@
         
         <div class="central-bottom">
         
+            <!--Něco do "central-bottom"-->
+            
         </div>
         
         

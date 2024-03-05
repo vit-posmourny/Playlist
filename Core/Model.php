@@ -12,7 +12,7 @@ class Model
         $this->database = new Database();
     }
     
-    public function all()
+    public function all(): array|false
     {
         $stmt = $this->database->query("SELECT * FROM $this->table");
         return $stmt->fetchAll();

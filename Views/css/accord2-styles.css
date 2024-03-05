@@ -13,7 +13,7 @@
 details {
     font-family: var(--font-family);
     font-size: 0.6em;
-    width: 90%;
+    width: 91%;
     margin: 0 auto ;
     background: var(--background-main-invert);
     color: var(--text-color);
@@ -22,6 +22,8 @@ details {
     border-radius: 5px;
     overflow: hidden;
 }
+
+
 summary {
     padding-left: 30%;
     padding-right: 1rem;
@@ -38,9 +40,11 @@ summary {
     overflow: hidden;
 }
 
+
 summary h2 {
     letter-spacing: 1px;
 }
+
 
 summary:hover {
     background: var(--gradient-hover);
@@ -87,14 +91,7 @@ details > ul {
     padding-bottom: 0.5rem;
 }
 
+
 li {
     padding-left: 5%;
-}
-
-details > ul~li {
-    padding-top: 5%;
-}
-
-ul {
- /*list-style-image: url("\Playlist\images\music_note_FILL0_wght100_GRAD0_opsz24.svg");*/
 }
