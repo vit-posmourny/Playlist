@@ -1,17 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 
-:root {
-    --size-play-button: 40px;
-    --track-time-color: #42A1EC;
-    --track-name-color: #e8c645;
-    --td-title-color: #e5e5e5;
-}
-
-
 * {
     box-sizing: border-box;
 }
-
 
 .playlist-img {
     height: 70px;
@@ -39,7 +30,7 @@
     padding-inline: 0.5rem;
     font-family: 'Quicksand', sans-serif ;
     border-radius: 0.5rem;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow-main);
     overflow-x: hidden;
 }
 

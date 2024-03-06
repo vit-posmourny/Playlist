@@ -16,19 +16,19 @@ foreach ($playlist as $slot) {
     $string = $slot['genres'];
     $delimiter = ":";
     // Split the string into an array using the delimiter
-    $genresArr = explode($delimiter, $string);
+    $explodeArr = explode($delimiter, $string);
     
     $slotGenres = null;
-    $lenght = sizeof($genresArr);
+    $lenght = sizeof($explodeArr);
     
     for ($i=0; $i < $lenght; $i++)
     {
         if ($i === $lenght-1)
         {
-            $slotGenres .= $genres[$genresArr[$i]];
+            $slotGenres .= $genres[$explodeArr[$i]];
             break;
         }
-        $slotGenres .= $genres[$genresArr[$i]].', ';
+        $slotGenres .= $genres[$explodeArr[$i]].', ';
     }
     
     echo '

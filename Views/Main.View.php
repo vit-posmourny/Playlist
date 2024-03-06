@@ -29,76 +29,8 @@
             
             <nav class="nav-left-bottom-overflow disable-select">
             
-                <details>
-                    <summary><h2>Summary</h2></summary>
-                    <ul>
-                        <li>1</li>
-                        <li> 2</li>
-                        <li> 3</li>
-                        <li> 4</li>
-                        <li> 5</li>
-                    </ul>
-                </details>
-                <details>
-                    <summary><h2>Summary</h2></summary>
-                    <ul>
-                        <li>1</li>
-                        <li> 2</li>
-                        <li> 3</li>
-                        <li> 4</li>
-                        <li> 5</li>
-                    </ul>
-                </details>
-                <details>
-                    <summary><h2>Summary</h2></summary>
-                    <ul>
-                        <li>1</li>
-                        <li> 2</li>
-                        <li> 3</li>
-                        <li> 4</li>
-                        <li> 5</li>
-                    </ul>
-                </details>
-                <details>
-                    <summary><h2>Summary</h2></summary>
-                    <ul>
-                        <li>1</li>
-                        <li> 2</li>
-                        <li> 3</li>
-                        <li> 4</li>
-                        <li> 5</li>
-                    </ul>
-                </details>
-                <details>
-                    <summary><h2>Summary</h2></summary>
-                    <ul>
-                        <li>1</li>
-                        <li> 2</li>
-                        <li> 3</li>
-                        <li> 4</li>
-                        <li> 5</li>
-                    </ul>
-                </details>
-                <details>
-                    <summary><h2>Summary</h2></summary>
-                    <ul>
-                        <li>1</li>
-                        <li> 2</li>
-                        <li> 3</li>
-                        <li> 4</li>
-                        <li> 5</li>
-                    </ul>
-                </details>
-                <details>
-                    <summary><h2>Summary</h2></summary>
-                    <ul>
-                        <li>1</li>
-                        <li> 2</li>
-                        <li> 3</li>
-                        <li> 4</li>
-                        <li> 5</li>
-                    </ul>
-                </details>
+                <?php include 'partials/disclosure_nav_genre.php'; ?>
+                
             </nav>
             
         </nav>
@@ -112,11 +44,11 @@
         
         <nav class="nav-central-top">
             
-            <a href="/Playlist/register"><button id="id-btn-register" class="button-main">Registrace</button></a>
+            <a id="a-register" href="/Playlist/register"><button id="id-btn-register" class="button-main btn-width letter-spacing">Registrace</button></a>
             
-            <a id="a-logout" href="/Playlist/login/logout"><button class="button-main btn-logout-width" type="button">LogOut</button></a>
+            <a id="a-logout" href="/Playlist/login/logout"><button class="button-main btn-width letter-spacing" type="button">LogOut</button></a>
             
-            <a href="/Playlist/"><button id="id-btn-login" class="button-main">Přihlášení</button></a>
+            <a id="a-logon" href="/Playlist/"><button id="id-btn-login-a" class="button-main btn-width letter-spacing">Přihlášení</button></a>
             
         </nav>
         
