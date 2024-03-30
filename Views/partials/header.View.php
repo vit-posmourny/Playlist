@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="/Playlist/Views/css/main-styles.css">
     <link rel="stylesheet" href="/Playlist/Views/css/main-button-styles.css">
     <link rel="stylesheet" href="/Playlist/Views/css/playlist-styles.css">
-    <link rel="stylesheet" href="/Playlist/Views/css/login-styles.css">
+    <link rel="stylesheet" href="/Playlist/Views/css/login-register-styles.css">
     <link rel="stylesheet" href="/Playlist/Views/css/disclosure-styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     
     <title><?php echo $title; ?></title>
 <head>

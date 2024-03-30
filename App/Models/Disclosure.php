@@ -13,4 +13,13 @@ class Disclosure extends Model
         $stmt = $this->database->query("SELECT genres FROM $this->table");
         return $stmt->fetchAll()[0];
     }
+
+
+    public function getInterpretersByGenre($genre): array|false
+    {
+        
+        die(print_r($genre));
+        $stmt = $this->database->query("SELECT interpret FROM $this->table WHERE genres = ?", $genre);
+        return $stmt->fetchAll()[0];
+    }
 }

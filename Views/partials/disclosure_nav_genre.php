@@ -7,16 +7,18 @@ $delimiter = ":";
 // Split the string into an array using the delimiter
 $explodeArr = explode($delimiter, $string);
 
+$index_summary = 1;
 
 foreach ($explodeArr as $genre)
 {
     echo '
     <details>
-        <summary><h2>'.$genres[$genre].'</h2></summary>
+        <summary id="'.$genres[$genre].'" class="nav-left-bottom-summary"><h2>'.$genres[$genre].'</h2></summary>
         <ul>
-            <li>1</li>
+            <li></li>
         </ul>
     </details>
     ';
+    $index_summary++;
 }
 ?>

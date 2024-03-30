@@ -10,7 +10,7 @@ let tdTTs = document.getElementsByClassName('td-track-time');
 
 // ZACHYTAVANI KLIK EVENTU Z PLAY TL. A NASLEDNE ZPRACOVANI - SWITCHOVANI DVOU TL.
 
-function getElementId(evnt)
+function getListPlayIconId(evnt)
 {
     if (first_entry)
     {

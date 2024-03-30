@@ -87,6 +87,7 @@
 <!----------------------------- SKRIPTY -------------------------------->
 
 <script type="text/javascript"> <?php include "js\list_play_button.js"?> </script>
+<script type="text/javascript"> <?php include "js\disclosure.js"?> </script>
 
 </body>
 

@@ -4,7 +4,7 @@ include 'genres.php';
 
 // IKONA pro list-play-icon
 $playicon = "\Playlist\images\pause_circle_FILL0_wght300_GRAD0_opsz24.svg";
-$index = 0;
+$index_playlist = 0;
 
 echo '<ul class="playlist-main mask">
 
@@ -34,16 +34,16 @@ foreach ($playlist as $slot) {
     echo '
             <li class="playlist-item">
             
-                <audio id="myAudio'.$index.'" ontimeupdate="updateTrackTime(this)" class="state_pause audio_class"
+                <audio id="myAudio'.$index_playlist.'" ontimeupdate="updateTrackTime(this)" class="state_pause audio_class"
                 
                         src="'.$slot['track_path'].'">
                 </audio>
                 
                 <img class="playlist-img" src="'.$slot['img_path'].'" alt="cover">
                 
-                <img id="'.$index.'" class="list-play-icon" onclick="getElementId(event);"
+                <img id="'.$index_playlist.'" class="list-play-icon" onclick="getListPlayIconId(event);"
                 
-                        src="'.$playicon.'" data-track-path="'.$slot['track_path'].' alt="play-icon">
+                        src="'.$playicon.'" data-track-path="'.$slot['track_path'].'" alt="play-icon">
                         
                 <div class="slot-text-area">
                 
@@ -55,7 +55,7 @@ foreach ($playlist as $slot) {
                         
                         <text class="td-genre">'.$slotGenres.'</text>
                         
-                        <text id="id-tracktime'.$index.'" class="td-track-time"></text>
+                        <text id="id-tracktime'.$index_playlist.'" class="td-track-time"></text>
                         
                     </div>
                 
@@ -63,7 +63,7 @@ foreach ($playlist as $slot) {
                 
             </li>
     ';
-        ++$index;
+        ++$index_playlist;
 }
 echo '</div>
 

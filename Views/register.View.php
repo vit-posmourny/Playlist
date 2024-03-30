@@ -1,10 +1,8 @@
 <?php Core\View::render('partials/header', ['title' => $title ?? 'Registrace']); ?>
 
-<body>
+<body class="container--center">
 
-    <main class="container--center">
-        
-        <form id="id_form_register" action="" class="form"  method="post">
+        <form id="id_form_register" action="" class="form-register"  method="post">
             
             <h1 class="form__headline">Registrace</h1>
             
@@ -31,8 +29,6 @@
             </div>
             
         </form>
-        
-    </main>
 
     <script type="text/javascript"><?php include __DIR__."/js/script_register.js"?></script>
 

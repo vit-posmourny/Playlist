@@ -46,7 +46,7 @@ class User extends Model
     {
         $assocArr['email'] = $email;
         
-        $stmt = $this->database->query("SELECT email FROM " . $this->table . " WHERE email = ?", $assocArr);
+        $stmt = $this->database->query("SELECT email FROM $this->table WHERE email = ?", $assocArr);
         
         if ($result = $stmt->fetch())
         {
@@ -59,9 +59,9 @@ class User extends Model
     
     public function getUserID($data): int|false
     {
-        $assocArr = array('email' => $data['email']);
+        $assocArr['email'] = $data['email'];
         
-        $stmt = $this->database->query("SELECT id FROM " . $this->table . " WHERE email = ?", $assocArr);
+        $stmt = $this->database->query("SELECT id FROM $this->table WHERE email = ?", $assocArr);
         
         $result = $stmt->fetch();
         
@@ -75,9 +75,9 @@ class User extends Model
     
     public function getUserPassword($data): string|false
     {
-        $assocArr = array('email' => $data['email']);
+        $assocArr['email'] = $data['email'];
         
-        $stmt = $this->database->query("SELECT password FROM " . $this->table . " WHERE email = ?", $assocArr);
+        $stmt = $this->database->query("SELECT password FROM $this->table WHERE email = ?", $assocArr);
 
         return $stmt->fetch()['password'];
     }
@@ -85,7 +85,7 @@ class User extends Model
     
     public function validUserToken($userToken): array|false
     {
-        $assocArr = array('remember_token' => $userToken);
+        $assocArr['remember_token'] = $userToken;
         $stmt = $this->database->query("SELECT * FROM $this->table WHERE remember_token = ?", $assocArr);
         return $stmt->fetch();
     }
