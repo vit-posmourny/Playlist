@@ -1,8 +1,11 @@
 <?php
 
 include 'genres.php';
-// 'genres' je název klíče z pole přiřazeného do prom. $disclosure_nav v Core\View (původně také název klíče, ještě v MainController.php)
-$string = $disclosure_nav['genres'];
+// 'genres' puvodne je název sloupce z tabulky disclosure
+// jeste v souboru MainController.php je assocArrayOfGenres klic k asociativnimu poli, ktere vraci v
+// clenska funkce getGenres() tridy Disclosure.php a ve tride View.php je z tohoto klice vytvoren
+// nazev promenne, do ktere je prirazena jako hodnota assoc.pole navracene fci. Disclosure::getGenres()
+$string = $assocArrayOfGenres['genres'];
 $delimiter = ":";
 // Split the string into an array using the delimiter
 $explodeArr = explode($delimiter, $string);

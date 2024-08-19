@@ -24,10 +24,11 @@ class MainController
     
     public function Playlist()
     {
+        //die(var_dump($this->disclosure->getGenres()));
         return View::render('Main', [
             'title' => 'Playlist',
             'playlist' => $this->playlist->all(),
-            'disclosure_nav' => $this->disclosure->getGenres(),
+            'assocArrayOfGenres' => $this->disclosure->getGenres(),
         ]);
     }
 }

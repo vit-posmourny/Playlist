@@ -3,7 +3,7 @@
 include 'genres.php';
 
 // IKONA pro list-play-icon
-$playicon = "\Playlist\images\pause_circle_FILL0_wght300_GRAD0_opsz24.svg";
+$playicon = "\Playlist\images\play_circle_FILL0_wght300_GRAD0_opsz24.svg";
 $index_playlist = 0;
 
 echo '<ul class="playlist-main mask">

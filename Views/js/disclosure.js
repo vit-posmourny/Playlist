@@ -1,3 +1,5 @@
+
+
 // Shromazdim kolekci vsech Summary rozeviraciho seznamu
 const buttons = document.getElementsByClassName("nav-left-bottom-summary");
 
@@ -16,42 +18,33 @@ function getGenreSummaryId() {
     getInterpretersByGenre(id);
 }
 
-
-
-// function getInterpreterByGenre(id) {
-//     let xhr = new XMLHttpRequest();
-//     xhr.open("POST", "App/Models/ajax/getInterpretersByGenre.php", true);
-//     xhr.onreadystatechange = function () {
-//         if (xhr.readyState == 4 && xhr.status == 200) {
-//             let result = xhr.responseText;
-//             // Do something with the result
-//             console.log("SQL Function Result: " + result);
-//         }
-//     };
-//     xhr.send();
-// }
-
 // funce je def.jednout zde v js, a jednou na serveru v php
 function getInterpretersByGenre(id)
 {
     $(document).ready(
-        $.post("App/Models/ajax/getInterpretersByGenre.php",
-            {
-                genres: id,
-                functionName: 444,
-            },
-            function (data, status) {
-                document.write("Data: " + data + "<br><br>Status: " + status)
-                    // alert("Data: " + data + "\nStatus: " + status);
+        $.ajax({
+            url:
+                "App/Models/moje_disclosure.php?genre=id",
+            type: "GET",
+            success: function(response) {
+                // Zpracování vrácených dat
+                //var data = JSON.parse(response);
+                document.write(response);
+                //alert("Data: " + data);
+                //document.write(data);
+                
             }
-        )
+        })
     )
 }
 
 
-// Jen zkousim jestli zafunguje
-$(document).ready(function(){
-    $("summary").click(function(){
-        $("h2").hide();
-    });
-});
+// $.post("App/Models/moje_disclosure.php",
+//     {
+//         genre: id,
+//     },
+//     function (data, status) {
+//         document.write("Data: " + data + "<br><br>Status: " + status)
+//         // alert("Data: " + data + "\nStatus: " + status);
+//     }
+// )

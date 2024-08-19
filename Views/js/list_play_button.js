@@ -1,8 +1,8 @@
 let play_icon_path = 'images/play_circle_FILL0_wght300_GRAD0_opsz24.svg';
 let pause_icon_path = 'images/pause_circle_FILL0_wght300_GRAD0_opsz24.svg';
 let first_entry = true;
-let id_current = '';
-let id_prev = '';
+let id_current_track = '';
+let id_prev_track = '';
 let my_audios = document.getElementsByClassName('audio_class');
 let icons = document.getElementsByClassName('list-play-icon');
 let tdTTs = document.getElementsByClassName('td-track-time');
@@ -15,51 +15,51 @@ function getListPlayIconId(evnt)
     if (first_entry)
     {
         let element = evnt.target;
-        id_current = element.id;
+        id_current_track = element.id;
         
-        my_audios[id_current].addEventListener('ended', myEndCurrent);
+        my_audios[id_current_track].addEventListener('ended', CurrTrackEnd);
         
-        id_prev = id_current;
-        currentPlay(stateCheckCurrent());
+        id_prev_track = id_current_track;
+        currTrackPlay(currTrackCheckState());
         
         first_entry = false;
     }
     else {
         
-        id_prev = id_current;
+        id_prev_track = id_current_track;
         
         let element = evnt.target;
-        id_current = element.id;
+        id_current_track = element.id;
         
-        my_audios[id_current].addEventListener('ended', myEndCurrent);
+        my_audios[id_current_track].addEventListener('ended', CurrTrackEnd);
         
-        if (id_current === id_prev)
+        if (id_current_track === id_prev_track)
         {
-            currentPlay(stateCheckCurrent());
+            currTrackPlay(currTrackCheckState());
         }
         else
         {
-            switchPlay(stateCheckPrev());
+            switchPlay(prevTrackCheckState());
         }
     }
 }
 
 
-function currentPlay(state)
+function currTrackPlay(state)
 {
     if (state === 'state_pause')
     {
-        icons[id_current].src = play_icon_path;
+        icons[id_current_track].src = pause_icon_path;
         
-        my_audios[id_current].play();
-        setStateOnPlayCurrent();
+        my_audios[id_current_track].play();
+        setCurrStateOnPlay();
     }
     else if (state == 'state_play')
     {
-        icons[id_current].src = pause_icon_path;
+        icons[id_current_track].src = play_icon_path;
         
-        my_audios[id_current].pause();
-        setStateOnPauseCurrent();
+        my_audios[id_current_track].pause();
+        setCurrTrackStateOnPause();
     }
     
 }
@@ -69,88 +69,88 @@ function switchPlay(state)
 {
     if (state === 'state_pause')
     {
-        icons[id_current].src = play_icon_path;
+        icons[id_current_track].src = play_icon_path;
         
-        my_audios[id_current].play();
-        setStateOnPlayCurrent();
+        my_audios[id_current_track].play();
+        setCurrStateOnPlay();
     }
     else if (state == 'state_play')
     {
-        icons[id_prev].src = pause_icon_path;
-        my_audios[id_prev].pause();
-        setStateOnPausePrev();
+        icons[id_prev_track].src = play_icon_path;
+        my_audios[id_prev_track].pause();
+        setPrevTrackStateOnPause();
         
-        icons[id_current].src = play_icon_path;
+        icons[id_current_track].src = pause_icon_path;
         
-        my_audios[id_current].play();
-        setStateOnPlayCurrent();
+        my_audios[id_current_track].play();
+        setCurrStateOnPlay();
         
     }
 }
 
 
-function stateCheckCurrent()
+function currTrackCheckState()
 {
-    if (my_audios[id_current].classList.contains('state_pause'))
+    if (my_audios[id_current_track].classList.contains('state_pause'))
     {
         return 'state_pause';
     }
-    else if (my_audios[id_current].classList.contains('state_play'))
+    else if (my_audios[id_current_track].classList.contains('state_play'))
     {
         return 'state_play';
     }
 }
 
 
-function stateCheckPrev()
+function prevTrackCheckState()
 {
-    if (my_audios[id_prev].classList.contains('state_pause'))
+    if (my_audios[id_prev_track].classList.contains('state_pause'))
     {
         return 'state_pause';
     }
-    else if (my_audios[id_prev].classList.contains('state_play'))
+    else if (my_audios[id_prev_track].classList.contains('state_play'))
     {
         return 'state_play';
     }
 }
 
 
-function setStateOnPlayCurrent()
+function setCurrStateOnPlay()
 {
-    my_audios[id_current].classList.remove('state_pause');
-    my_audios[id_current].classList.add('state_play');
+    my_audios[id_current_track].classList.remove('state_pause');
+    my_audios[id_current_track].classList.add('state_play');
 }
 
 
-function  setStateOnPauseCurrent()
+function setCurrTrackStateOnPause()
 {
-    my_audios[id_current].classList.remove('state_play');
-    my_audios[id_current].classList.add('state_pause');
+    my_audios[id_current_track].classList.remove('state_play');
+    my_audios[id_current_track].classList.add('state_pause');
 }
 
 
-function setStateOnPlayPrev()
+function setPrevStateOnPlay()
 {
-    my_audios[id_prev].classList.remove('state_pause');
-    my_audios[id_prev].classList.add('state_play');
+    my_audios[id_prev_track].classList.remove('state_pause');
+    my_audios[id_prev_track].classList.add('state_play');
 }
 
 
-function  setStateOnPausePrev()
+function setPrevTrackStateOnPause()
 {
-    my_audios[id_prev].classList.remove('state_play');
-    my_audios[id_prev].classList.add('state_pause');
+    my_audios[id_prev_track].classList.remove('state_play');
+    my_audios[id_prev_track].classList.add('state_pause');
 }
 
 
-function myEndCurrent()
+function CurrTrackEnd()
 {
-    my_audios[id_current].classList.remove('state_play');
-    my_audios[id_current].classList.add('state_pause');
+    my_audios[id_current_track].classList.remove('state_play');
+    my_audios[id_current_track].classList.add('state_pause');
     
-    icons[id_current].src = pause_icon_path;
+    icons[id_current_track].src = play_icon_path;
     
-    setStateOnPauseCurrent();
+    setCurrTrackStateOnPause();
 }
 
 
@@ -164,7 +164,7 @@ function updateTrackTime(audio)
     currTime = formatSecondsAsTime(currTime);
     duration = formatSecondsAsTime(duration);
     
-    tdTTs[id_current].innerHTML = currTime +'/'+ duration;
+    tdTTs[id_current_track].innerHTML = currTime +'/'+ duration;
 }
 
 function formatSecondsAsTime(secs) {
