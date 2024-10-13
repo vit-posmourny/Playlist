@@ -17,7 +17,9 @@ foreach ($playlist as $slot) {
     $delimiter = ":";
     // Split the string into an array using the delimiter
     $explodeArr = explode($delimiter, $string);
-    
+    // array_shift usekne prvni prvek pole - kdyz $string obsahuje napr :4, explode() vrati
+    // v prvnim prvku pole "" a ve slotu zacina seznam zanru carkou
+    array_shift($explodeArr);
     $slotGenres = null;
     $lenght = sizeof($explodeArr);
     
@@ -34,7 +36,7 @@ foreach ($playlist as $slot) {
     echo '
             <li class="playlist-item">
             
-                <audio id="myAudio'.$index_playlist.'" ontimeupdate="updateTrackTime(this)" class="state_pause audio_class"
+                <audio id="track-slot_'.$index_playlist.'" ontimeupdate="updateTrackTime(this)" class="state_pause slot_class"
                 
                         src="'.$slot['track_path'].'">
                 </audio>

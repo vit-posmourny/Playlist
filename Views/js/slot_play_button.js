@@ -3,7 +3,7 @@ let pause_icon_path = 'images/pause_circle_FILL0_wght300_GRAD0_opsz24.svg';
 let first_entry = true;
 let id_current_track = '';
 let id_prev_track = '';
-let my_audios = document.getElementsByClassName('audio_class');
+let audio_slots = document.getElementsByClassName('slot_class');
 let icons = document.getElementsByClassName('list-play-icon');
 let tdTTs = document.getElementsByClassName('td-track-time');
 
@@ -17,7 +17,7 @@ function getListPlayIconId(evnt)
         let element = evnt.target;
         id_current_track = element.id;
         
-        my_audios[id_current_track].addEventListener('ended', CurrTrackEnd);
+        audio_slots[id_current_track].addEventListener('ended', CurrTrackEnd);
         
         id_prev_track = id_current_track;
         currTrackPlay(currTrackCheckState());
@@ -31,7 +31,7 @@ function getListPlayIconId(evnt)
         let element = evnt.target;
         id_current_track = element.id;
         
-        my_audios[id_current_track].addEventListener('ended', CurrTrackEnd);
+        audio_slots[id_current_track].addEventListener('ended', CurrTrackEnd);
         
         if (id_current_track === id_prev_track)
         {
@@ -51,14 +51,14 @@ function currTrackPlay(state)
     {
         icons[id_current_track].src = pause_icon_path;
         
-        my_audios[id_current_track].play();
+        audio_slots[id_current_track].play();
         setCurrStateOnPlay();
     }
     else if (state == 'state_play')
     {
         icons[id_current_track].src = play_icon_path;
         
-        my_audios[id_current_track].pause();
+        audio_slots[id_current_track].pause();
         setCurrTrackStateOnPause();
     }
     
@@ -71,18 +71,18 @@ function switchPlay(state)
     {
         icons[id_current_track].src = play_icon_path;
         
-        my_audios[id_current_track].play();
+        audio_slots[id_current_track].play();
         setCurrStateOnPlay();
     }
     else if (state == 'state_play')
     {
         icons[id_prev_track].src = play_icon_path;
-        my_audios[id_prev_track].pause();
+        audio_slots[id_prev_track].pause();
         setPrevTrackStateOnPause();
         
         icons[id_current_track].src = pause_icon_path;
         
-        my_audios[id_current_track].play();
+        audio_slots[id_current_track].play();
         setCurrStateOnPlay();
         
     }
@@ -91,11 +91,11 @@ function switchPlay(state)
 
 function currTrackCheckState()
 {
-    if (my_audios[id_current_track].classList.contains('state_pause'))
+    if (audio_slots[id_current_track].classList.contains('state_pause'))
     {
         return 'state_pause';
     }
-    else if (my_audios[id_current_track].classList.contains('state_play'))
+    else if (audio_slots[id_current_track].classList.contains('state_play'))
     {
         return 'state_play';
     }
@@ -104,11 +104,11 @@ function currTrackCheckState()
 
 function prevTrackCheckState()
 {
-    if (my_audios[id_prev_track].classList.contains('state_pause'))
+    if (audio_slots[id_prev_track].classList.contains('state_pause'))
     {
         return 'state_pause';
     }
-    else if (my_audios[id_prev_track].classList.contains('state_play'))
+    else if (audio_slots[id_prev_track].classList.contains('state_play'))
     {
         return 'state_play';
     }
@@ -117,36 +117,36 @@ function prevTrackCheckState()
 
 function setCurrStateOnPlay()
 {
-    my_audios[id_current_track].classList.remove('state_pause');
-    my_audios[id_current_track].classList.add('state_play');
+    audio_slots[id_current_track].classList.remove('state_pause');
+    audio_slots[id_current_track].classList.add('state_play');
 }
 
 
 function setCurrTrackStateOnPause()
 {
-    my_audios[id_current_track].classList.remove('state_play');
-    my_audios[id_current_track].classList.add('state_pause');
+    audio_slots[id_current_track].classList.remove('state_play');
+    audio_slots[id_current_track].classList.add('state_pause');
 }
 
 
 function setPrevStateOnPlay()
 {
-    my_audios[id_prev_track].classList.remove('state_pause');
-    my_audios[id_prev_track].classList.add('state_play');
+    audio_slots[id_prev_track].classList.remove('state_pause');
+    audio_slots[id_prev_track].classList.add('state_play');
 }
 
 
 function setPrevTrackStateOnPause()
 {
-    my_audios[id_prev_track].classList.remove('state_play');
-    my_audios[id_prev_track].classList.add('state_pause');
+    audio_slots[id_prev_track].classList.remove('state_play');
+    audio_slots[id_prev_track].classList.add('state_pause');
 }
 
 
 function CurrTrackEnd()
 {
-    my_audios[id_current_track].classList.remove('state_play');
-    my_audios[id_current_track].classList.add('state_pause');
+    audio_slots[id_current_track].classList.remove('state_play');
+    audio_slots[id_current_track].classList.add('state_pause');
     
     icons[id_current_track].src = play_icon_path;
     

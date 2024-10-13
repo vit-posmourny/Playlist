@@ -9,6 +9,7 @@ $string = $assocArrayOfGenres['genres'];
 $delimiter = ":";
 // Split the string into an array using the delimiter
 $explodeArr = explode($delimiter, $string);
+//die(var_dump($explodeArr));
 
 $index_summary = 1;
 
@@ -17,9 +18,15 @@ foreach ($explodeArr as $genre)
     echo '
     <details>
         <summary id="'.$genres[$genre].'" class="nav-left-bottom-summary"><h2>'.$genres[$genre].'</h2></summary>
-        <ul>
-            <li></li>
-        </ul>
+        <ul>';
+        foreach ($playlist as $line)
+        {
+            if (strrpos($line['genres'], $genre))
+            {
+                echo '<li>&bull; '.$line['interpret'].'</li>';
+            }
+        }
+    echo '</ul>
     </details>
     ';
     $index_summary++;

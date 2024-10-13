@@ -41,7 +41,7 @@ class Router
 
         } else {
             
-            echo "404 Not Found";
+            echo "my 404 Not Found";
         }
     }
 }

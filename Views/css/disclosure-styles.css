@@ -1,6 +1,6 @@
 details {
     font-family: var(--font-family);
-    font-size: 0.6em;
+    font-size: 0.7em;
     width: 91%;
     margin: 0 auto ;
     background: var(--background-main-invert);
@@ -84,5 +84,6 @@ details > ul {
 
 
 li {
+    font-size: 1.2em;
     padding-left: 5%;
 }
