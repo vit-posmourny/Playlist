@@ -12,20 +12,6 @@ let tdTTs = document.getElementsByClassName('td-track-time');
 
 function getListPlayIconId(evnt)
 {
-    if (first_entry)
-    {
-        let element = evnt.target;
-        id_current_track = element.id;
-        
-        audio_slots[id_current_track].addEventListener('ended', CurrTrackEnd);
-        
-        id_prev_track = id_current_track;
-        currTrackPlay(currTrackCheckState());
-        
-        first_entry = false;
-    }
-    else {
-        
         id_prev_track = id_current_track;
         
         let element = evnt.target;
@@ -42,7 +28,6 @@ function getListPlayIconId(evnt)
             switchPlay(prevTrackCheckState());
         }
     }
-}
 
 
 function currTrackPlay(state)
