@@ -9,7 +9,6 @@ $string = $assocArrayOfGenres['genres'];
 $delimiter = ":";
 // Split the string into an array using the delimiter
 $explodeArr = explode($delimiter, $string);
-//die(var_dump($explodeArr));
 
 $index_summary = 1;
 
@@ -19,11 +18,21 @@ foreach ($explodeArr as $genre)
     <details>
         <summary id="'.$genres[$genre].'" class="nav-left-bottom-summary"><h2>'.$genres[$genre].'</h2></summary>
         <ul>';
+        $interpret = [];
+        
+        // TODO at nedochazi, ze hledam zanr 21 a vybere se i interpret s 2 nebo 1 zanrem
+        // $playlist sem donáší Core/View.php
         foreach ($playlist as $line)
         {
-            if (strrpos($line['genres'], $genre))
+            $str = $line['genres'];
+            $pattern = "/:$genre:/";
+            if (preg_match($pattern, $str))
             {
-                echo '<li>&bull; '.$line['interpret'].'</li>';
+                if (!($interpret[$line['interpret']]))
+                {
+                    $interpret = array($line['interpret'] => "1");
+                    echo '<li>&bull; '.$line['interpret'].'</li>';
+                }
             }
         }
     echo '</ul>

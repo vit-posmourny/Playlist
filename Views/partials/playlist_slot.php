@@ -4,7 +4,7 @@ include 'genres.php';
 
 // IKONA pro list-play-icon
 $playicon = "\Playlist\images\play_circle_FILL0_wght300_GRAD0_opsz24.svg";
-$index_playlist = 0;
+$index_slot = 0;
 
 echo '<ul class="playlist-main mask">
 
@@ -20,6 +20,7 @@ foreach ($playlist as $slot) {
     // array_shift usekne prvni prvek pole - kdyz $string obsahuje napr :4, explode() vrati
     // v prvnim prvku pole "" a ve slotu zacina seznam zanru carkou
     array_shift($explodeArr);
+    array_pop($explodeArr);
     $slotGenres = null;
     $lenght = sizeof($explodeArr);
     
@@ -36,14 +37,14 @@ foreach ($playlist as $slot) {
     echo '
             <li class="playlist-item">
             
-                <audio id="track-slot_'.$index_playlist.'" ontimeupdate="updateTrackTime(this)" class="state_pause slot_class"
+                <audio id="'.$index_slot.'" ontimeupdate="updateTrackTime(this)" class="state_pause slot_class"
                 
                         src="'.$slot['track_path'].'">
                 </audio>
                 
                 <img class="playlist-img" src="'.$slot['img_path'].'" alt="cover">
                 
-                <img id="'.$index_playlist.'" class="list-play-icon" onclick="getListPlayIconId(event);"
+                <img id="'.$index_slot.'" class="slot-play-icon" onclick="getListPlayIconId(event);"
                 
                         src="'.$playicon.'" data-track-path="'.$slot['track_path'].'" alt="play-icon">
                         
@@ -57,7 +58,7 @@ foreach ($playlist as $slot) {
                         
                         <text class="td-genre">'.$slotGenres.'</text>
                         
-                        <text id="id-tracktime'.$index_playlist.'" class="td-track-time"></text>
+                        <text id="id-tracktime'.$index_slot.'" class="td-track-time"></text>
                         
                     </div>
                 
@@ -65,7 +66,7 @@ foreach ($playlist as $slot) {
                 
             </li>
     ';
-        ++$index_playlist;
+        ++$index_slot;
 }
 echo '</div>
 
