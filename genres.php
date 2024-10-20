@@ -8,6 +8,6 @@ $genres = array(
     '6' => 'Death Metal',
     '7' => 'Acid jazz',
     '8' => 'jazz-funk',
-    '9' => 'Pop'
+    '9' => 'Pop',
 );
 ?>

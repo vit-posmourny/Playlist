@@ -1,10 +1,9 @@
 let play_icon_path = 'images/play_circle_FILL0_wght300_GRAD0_opsz24.svg';
 let pause_icon_path = 'images/pause_circle_FILL0_wght300_GRAD0_opsz24.svg';
-let first_entry = true;
 let id_current_track = '';
 let id_prev_track = '';
 let audio_slots = document.getElementsByClassName('slot_class');
-let icons = document.getElementsByClassName('list-play-icon');
+let icons = document.getElementsByClassName('slot-play-icon');
 let tdTTs = document.getElementsByClassName('td-track-time');
 
 
@@ -27,7 +26,7 @@ function getListPlayIconId(evnt)
         {
             switchPlay(prevTrackCheckState());
         }
-    }
+}
 
 
 function currTrackPlay(state)
@@ -54,7 +53,7 @@ function switchPlay(state)
 {
     if (state === 'state_pause')
     {
-        icons[id_current_track].src = play_icon_path;
+        icons[id_current_track].src = pause_icon_path;
         
         audio_slots[id_current_track].play();
         setCurrStateOnPlay();

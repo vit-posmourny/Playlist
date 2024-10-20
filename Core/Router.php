@@ -36,7 +36,6 @@ class Router
             $callback = $this->routes[$url]['callback'];
             
             $controllerInit = new $controller();
-            // TODO vysvětli si, co znamená násl.řádek
             $controllerInit->$callback($_POST ? $_POST : []);
 
         } else {

@@ -11,12 +11,12 @@
 }
 
 
-.list-play-icon {
+.slot-play-icon {
     min-height: var(--size-play-button);
 }
 
 
-.list-play-icon:hover {
+.slot-play-icon:hover {
     cursor: pointer;
 }
 
