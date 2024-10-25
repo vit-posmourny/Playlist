@@ -39,7 +39,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 31%;
+    height: 10%;
     width: 94%;
     gap: 0.4rem;
     padding-block: 0.5em;
@@ -47,6 +47,25 @@ body {
     border-radius: 0.5rem;
     background-color: var(--bg-main-gray);
     box-shadow: var(--box-shadow-main);
+}
+
+.nav-left-upper.open{
+    animation: nlu-unroll 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.nav-left-upper.close{
+    animation: nlu-roll 0.3s;
+}
+
+@keyframes nlu-unroll {
+    from {height: 10%;}
+    to {height: 31%;}
+}
+
+@keyframes nlu-roll {
+    from {height: 31%;}
+    to {height: 10%;}
 }
 
 

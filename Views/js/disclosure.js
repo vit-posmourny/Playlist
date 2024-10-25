@@ -1,5 +1,29 @@
+var userButtonState = true;
+
+// po kliknuti tl.uzivatele rozevre nav-left-upper
+const userButton = document.getElementById("id-user-btn");
+userButton.addEventListener("click", navLeftUpperUnroll);
 
 
+function navLeftUpperUnroll()
+{
+    let elem = document.getElementsByClassName("nav-left-upper")[0];
+    if(userButtonState){
+        if(elem.classList.contains('close')){
+            elem.classList.remove('close');
+        }
+        elem.classList.add('open');
+        userButtonState = false;
+    }else{
+        if(!userButtonState){
+            if(elem.classList.contains('open')){
+                elem.classList.remove('open');
+            }
+        elem.classList.add('close');
+        userButtonState = true;
+        }
+    }
+}
 // Shromazdim kolekci vsech Summary rozeviraciho seznamu
 const buttons = document.getElementsByClassName("nav-left-bottom-summary");
 

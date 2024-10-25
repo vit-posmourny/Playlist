@@ -20,7 +20,6 @@ foreach ($explodeArr as $genre)
         <ul>';
         $interpret = [];
         
-        // TODO at nedochazi, ze hledam zanr 21 a vybere se i interpret s 2 nebo 1 zanrem
         // $playlist sem donáší Core/View.php
         foreach ($playlist as $line)
         {
