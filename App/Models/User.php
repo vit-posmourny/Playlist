@@ -60,16 +60,14 @@ class User extends Model
     public function getUserID($data): int|false
     {
         $assocArr['email'] = $data['email'];
-        
+        //die(var_dump($assocArr));
         $stmt = $this->database->query("SELECT id FROM $this->table WHERE email = ?", $assocArr);
-        
         $result = $stmt->fetch();
-        
+
         if ($result)
-        {
             return $result['id'];
-        }
-        return $result;
+        else
+            return $result;
     }
     
     
@@ -112,3 +110,4 @@ class User extends Model
         }
     }
 }
+?>
