@@ -17,9 +17,15 @@
 
                 <button id="id-user-btn" class="button-main width">ID: <?php if (!$_SESSION['logout']) {echo $_SESSION['user_id'];}?></button>
                 
-                <button id="id-logout-btn" type="button" class="button-main width"><?php if (!$_SESSION['logout']) {echo $_SESSION['user_email'];}?></button>
+                <!-- <button id="id-logout-btn" type="button" class="button-main width"><?//php if (!$_SESSION['logout']) {echo $_SESSION['user_email'];}?></button> -->
                 
-                <button class="button-main width">Token: <?php if (!$_SESSION['logout']) {echo $_SESSION['remember_token'];}?></button>
+                <a id="a-logout" href="/Playlist/login/logout" class="width"><button class="button-main letter-spacing" type="button" style="width: 100%;">LogOut</button></a>
+
+                <!-- <button class="button-main width">Token: <?//php if (!$_SESSION['logout']) {echo $_SESSION['remember_token'];}?></button> -->
+
+                <a id="a-logon" href="/Playlist/" class="width"><button id="id-btn-login-a" class="button-main btn-width letter-spacing" style="width: 100%;">Přihlášení</button></a>
+                
+                <a id="a-register" href="/Playlist/register" class="width"><button id="id-btn-register" class="button-main btn-width letter-spacing" style="width: 100%;">Registrace</button></a>
         
             </div>
             
@@ -44,11 +50,11 @@
         
         <nav class="nav-central-top">
             
-            <a id="a-register" href="/Playlist/register"><button id="id-btn-register" class="button-main btn-width letter-spacing">Registrace</button></a>
             
-            <a id="a-logout" href="/Playlist/login/logout"><button class="button-main btn-width letter-spacing" type="button">LogOut</button></a>
             
-            <a id="a-logon" href="/Playlist/"><button id="id-btn-login-a" class="button-main btn-width letter-spacing">Přihlášení</button></a>
+            
+            
+            
             
         </nav>
         

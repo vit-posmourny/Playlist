@@ -39,7 +39,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 10%;
+    height: 9.5%;
     width: 94%;
     gap: 0.4rem;
     padding-block: 0.5em;
@@ -59,13 +59,13 @@ body {
 }
 
 @keyframes nlu-unroll {
-    from {height: 10%;}
-    to {height: 31%;}
+    from {height: 9.5%;}
+    to {height: 42%;}
 }
 
 @keyframes nlu-roll {
-    from {height: 31%;}
-    to {height: 10%;}
+    from {height: 42%;}
+    to {height: 9.5%;}
 }
 
 
@@ -169,14 +169,14 @@ div.central-bottom
 
 /*===================================== ID`s ====================================*/
 
-#a-register {
+/* #a-register {
     width: 20%;
-}
+} */
 
-#a-logout {
+/* #a-logout {
     width: 60%;
-}
+} */
 
-#a-logon {
+/* #a-logon {
     width: 20%;
-}
+} */
