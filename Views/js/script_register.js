@@ -1,5 +1,5 @@
-let email = document.getElementById('id_input_email');
-let pass = document.getElementById('id_input_pass');
+let email = document.getElementById('input-email');
+let pass = document.getElementById('input-pass');
 let pass2 = document.getElementById('id_input_pass2');
 let registerBtn = document.getElementById('id-btn-register');
 let registerForm = document.getElementById('id_form_register');
@@ -26,7 +26,7 @@ function checkAllStates()
 
     } else {
 
-        document.getElementById('id-all-err').innerHTML = "Vyplňte prosím všechny údaje.";
+        document.getElementById('all-error').innerHTML = "Vyplňte prosím všechny údaje.";
     }
 }
 
@@ -37,14 +37,14 @@ function emailValidate()
     if (!(this.value.includes('@') && this.value.includes('.')))
     {
         this.classList.add('input--error');
-        document.getElementById('id-mail-err').innerHTML = 'Emailová adresa musí obsahovat @ a \".\".';
+        document.getElementById('mail-error').innerHTML = 'Emailová adresa musí obsahovat @ a \".\".';
         emailValidState = false;
         
     } else {
 
         this.classList.remove('input--error');
         emailValidState = true;
-        document.getElementById('id-mail-err').innerHTML = '';
+        document.getElementById('mail-error').innerHTML = '';
     }
 }
 
@@ -55,13 +55,13 @@ function passValidate()
     if (this.value.length < 1) {
         
         this.classList.add('input--error');
-        document.getElementById('id-pass-err').innerHTML = "Heslo musí být alespoň 8 znaků dlouhé.";
+        document.getElementById('pass-error').innerHTML = "Heslo musí být alespoň 8 znaků dlouhé.";
         passValidState = false;
 
     } else {
 
         this.classList.remove('input--error');
-        document.getElementById('id-pass-err').innerHTML = '';
+        document.getElementById('pass-error').innerHTML = '';
         passValidState = true;
     }
 }

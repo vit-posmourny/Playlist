@@ -6,13 +6,13 @@
             
             <h1 class="form__headline">Registrace</h1>
             
-            <input id="id_input_email" type="text" name="email" placeholder="Email" >
+            <input id="input-email" type="text" name="email" placeholder="Email" >
             
-                <p id="id-mail-err" class="form__error-message"><?php echo $_SESSION['email_exists']?></p>
+                <p id="mail-error" class="form__error-message"><?php echo $_SESSION['email_exists']?></p>
             
-            <input id="id_input_pass" type="text" name="password" placeholder="Heslo">
+            <input id="input-pass" type="text" name="password" placeholder="Heslo">
             
-                <p id="id-pass-err" class="form__error-message"></p>
+                <p id="pass-error" class="form__error-message"></p>
             
             <input id="id_input_pass2" type="text" name="password" placeholder="Potvrdit heslo">
             
@@ -20,7 +20,7 @@
             
             <button id="id-btn-register" class="button-main" type="button">Vytvořit účet</button>
             
-                <p id="id-all-err" class="form__error-message"></p>
+                <p id="all-error" class="form__error-message"></p>
 
             <div class="form__footer">
                 

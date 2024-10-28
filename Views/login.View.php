@@ -3,21 +3,21 @@
 
 <body class="container--center">
 
-        <form id="id_form_login" action="" class="form-login" name="name_form" method="post">
+        <form id="form-login" action="" class="form-login" name="name_form" method="post">
             
             <h1 class="form__headline">Přihlásit se</h1>
             
-            <input id="id_input_email" name="email" type="text" placeholder="Email">
+            <input id="input-email" name="email" type="text" placeholder="Email">
             
-                <p id="id-mail-err" class="form__error-message letter-spacing"><?php echo $_SESSION['wrong_email'];?></p>
+                <p id="mail-error" class="form__error-message letter-spacing"><?php echo $_SESSION['wrong_email'];?></p>
             
-            <input id="id_input_pass" name="password" type="text" placeholder="Heslo">
+            <input id="input-pass" name="password" type="text" placeholder="Heslo">
             
-                <p id="id-pass-err" class="form__error-message letter-spacing"><?php echo $_SESSION['wrong_password'];?></p>
+                <p id="pass-error" class="form__error-message letter-spacing"><?php echo $_SESSION['wrong_password'];?></p>
                     
             <button id="id-btn-login-b" class="button-main letter-spacing" type="button">Přihlášení</button>
             
-                <p id="id-all-err" class="form__error-message letter-spacing"></p>
+                <p id="all-error" class="form__error-message letter-spacing"></p>
             
             <input id="id-hidden-checkbox" type="hidden" name="hidden-checkbox" value='false'>
 

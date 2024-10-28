@@ -1,5 +1,5 @@
-let email = document.getElementById('id_input_email');
-let pass = document.getElementById('id_input_pass');
+let email = document.getElementById('input-email');
+let pass = document.getElementById('input-pass');
 let loginBtn = document.getElementById('id-btn-login-b');
 let checkbox = document.getElementById('id-checkbox');
 let hiddenCheckbox = document.getElementById('id-hidden-checkbox');
@@ -35,13 +35,13 @@ function checkAllStates() {
     
     if (emailValidState && passValidState)
     {
-        let form = document.getElementById('id_form_login');
+        let form = document.getElementById('form-login');
         form.setAttribute('action', '/Playlist/login');
         form.submit();
 
     } else {
         
-        document.getElementById('id-all-err').innerHTML = "Vyplňte prosím všechny údaje.";
+        document.getElementById('all-error').innerHTML = "Vyplňte prosím všechny údaje.";
     }
 }
 
@@ -51,7 +51,7 @@ function emailValidate()
     if (!(this.value.includes('@') && this.value.includes('.')))
     {
         this.classList.add('input--error');
-        document.getElementById('id-mail-err').innerHTML = 'Emailová adresa musí obsahovat @ a \"<b>.</b>\".';
+        document.getElementById('mail-error').innerHTML = 'Emailová adresa musí obsahovat @ a \"<b>.</b>\".';
         emailValidState = false;
 
     } else
@@ -66,7 +66,7 @@ function passValidate()
 {
     if (this.value.length < 8)
     {
-        document.getElementById('id-pass-err').innerHTML = "Heslo musí být alespoň <b>8</b> znaků dlouhé.";
+        document.getElementById('pass-error').innerHTML = "Heslo musí být alespoň <b>8</b> znaků dlouhé.";
         this.classList.add('input--error');
         passValidState = false;
         
