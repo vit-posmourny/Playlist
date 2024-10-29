@@ -18,7 +18,7 @@
             
                 <p id="id-pass2-err" class="form__error-message"></p>
             
-            <button id="id-btn-register" class="button-main" type="button">Vytvořit účet</button>
+            <button id="id-btn-register" class="button_main" type="button">Vytvořit účet</button>
             
                 <p id="all-error" class="form__error-message"></p>
 

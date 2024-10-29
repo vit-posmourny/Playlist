@@ -12,16 +12,18 @@
     <nav class="nav-left">
         
         <nav class="nav-left-upper mask">
+
+        <div id="usracc-modal" class="usracc_modal" popover="auto"></div>
             
             <div class="div-left-upper">
 
-                <button id="id-user-btn" class="button-main width">ID: <?php if (!$_SESSION['logout']) {echo $_SESSION['user_id'];}?></button>
+                <button id="id-user-btn" class="button_main width">ID: <?php if (!$_SESSION['logout']) {echo $_SESSION['user_id'];}?></button>
                 
-                <a id="a-logout" href="/Playlist/login/logout" class="width"><button class="button-main letter-spacing" type="button" style="width: 100%;">LogOut</button></a>
+                <a id="a-logout" href="/Playlist/login/logout" class="width"><button class="button_main letter-spacing" type="button" style="width: 100%;">LogOut</button></a>
 
-                <a id="a-logon" href="/Playlist/" class="width"><button id="id-btn-login-a" class="button-main btn-width letter-spacing" style="width: 100%;">Přihlášení</button></a>
+                <a id="a-logon" href="/Playlist/" class="width"><button id="id-btn-login-a" class="button_main btn-width letter-spacing" style="width: 100%;">Přihlášení</button></a>
                 
-                <a id="a-register" href="/Playlist/register" class="width"><button id="id-btn-register" class="button-main btn-width letter-spacing" style="width: 100%;">Registrace</button></a>
+                <a id="a-register" href="/Playlist/register" class="width"><button id="id-btn-register" class="button_main btn-width letter-spacing" style="width: 100%;">Registrace</button></a>
         
             </div>
             
@@ -46,11 +48,7 @@
         
         <nav class="nav-central-top">
             
-            
-            
-            
-            
-            
+            <button id="zk1" popovertarget="usracc-modal">modal</button>
             
         </nav>
         
@@ -65,7 +63,7 @@
     
     <!----------------------------- PRAVÁ NAVIGACE ------------------------------->
     
-    <div class="nav-right">
+    <div class="nav-right disable-select">
 
         <?php
             if (!$_SESSION['logout'])
@@ -90,6 +88,7 @@
 
 <script type="text/javascript"> <?php include "js\slot_play_button.js"?> </script>
 <script type="text/javascript"> <?php include "js\disclosure.js"?> </script>
+<script type="text/javascript"> <?php include "js\usracc_modal.js"?> </script>
 
 </body>
 

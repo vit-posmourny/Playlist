@@ -15,7 +15,7 @@
             
                 <p id="pass-error" class="form__error-message letter-spacing"><?php echo $_SESSION['wrong_password'];?></p>
                     
-            <button id="id-btn-login-b" class="button-main letter-spacing" type="button">Přihlášení</button>
+            <button id="id-btn-login-b" class="button_main letter-spacing" type="button">Přihlášení</button>
             
                 <p id="all-error" class="form__error-message letter-spacing"></p>
             

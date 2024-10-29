@@ -123,21 +123,13 @@ body {
     background: var(--background-main);
 }
 
-
-/*toto maji vsechny butony v nav-central-top aby vyplnili
- celou delku anchoru v nemz jsou vnorene*/
-.btn-width {
-    width: 100%;
-}
-
-
 div.central-bottom
 {
     width: inherit;
     height: 91%;
     content: url("/Playlist/images/colorful-headphones.jpg");
     background-size: cover;
-}
+} 
 
 /*<!----------------------------- PRAVÁ NAVIGACE ------------------------------->*/
 
@@ -168,15 +160,3 @@ div.central-bottom
 }
 
 /*===================================== ID`s ====================================*/
-
-/* #a-register {
-    width: 20%;
-} */
-
-/* #a-logout {
-    width: 60%;
-} */
-
-/* #a-logon {
-    width: 20%;
-} */

@@ -2,7 +2,7 @@ button {
     min-height: 30.82px;
 }
 
-.button-main {
+.button_main {
 
     /*font-family: "Helvetica Neue","Helvetica,Arial",system-ui,sans-serif;*/
     font-family: "Franklin Gothic Book";
@@ -33,20 +33,20 @@ button {
 }
 
 
-.button-main:disabled {
+.button_main:disabled {
     cursor: default;
     opacity: .3;
 }
 
 
-.button-main:hover {
+.button_main:hover {
     background-image: var(--btn-main-hover);
     border-color: #1482D0;
     text-decoration: none;
 }
 
 
-.button-main:active {
+.button_main:active {
     background-image: var(--btn-main-active);
     border-color: #006DBC;
     outline: none;
@@ -54,7 +54,7 @@ button {
 }
 
 
-.button-main:focus {
+.button_main:focus {
     box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 1px;
     outline: none;
 }
