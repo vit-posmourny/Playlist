@@ -112,7 +112,7 @@ body {
 
 .nav-central-top{
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     overflow: hidden;
     padding-block: 1rem;
@@ -160,3 +160,7 @@ div.central-bottom
 }
 
 /*===================================== ID`s ====================================*/
+
+#d-user-btn-cont {
+    width: 89%;
+}

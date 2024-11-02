@@ -17,7 +17,10 @@
             
             <div class="div-left-upper">
 
-                <button id="id-user-btn" class="button_main width">ID: <?php if (!$_SESSION['logout']) {echo $_SESSION['user_id'];}?></button>
+                <div id="d-user-btn-cont">
+                    <button id="b-user-btn" class="button_main width"><?php if (!$_SESSION['logout']) {echo $_SESSION['user_email'];}?></button>
+                    <button id="b-user-arrow" class="button_main" popovertarget="usracc-modal"></button>
+                </div>
                 
                 <a id="a-logout" href="/Playlist/login/logout" class="width"><button class="button_main letter-spacing" type="button" style="width: 100%;">LogOut</button></a>
 
@@ -46,17 +49,9 @@
     <div class="container-central">
         
         
-        <nav class="nav-central-top">
-            
-            <button id="zk1" popovertarget="usracc-modal">modal</button>
-            
-        </nav>
+        <nav class="nav-central-top"></nav>
         
-        <div class="central-bottom">
-        
-            <!--Něco do "central-bottom"-->
-            
-        </div>
+        <div class="central-bottom"></div>
         
         
     </div>

@@ -1,7 +1,7 @@
 var userButtonState = true;
 
 // po kliknuti tl.uzivatele rozevre nav-left-upper
-const userButton = document.getElementById("id-user-btn");
+const userButton = document.getElementById("b-user-btn");
 userButton.addEventListener("click", navLeftUpperUnroll);
 
 
