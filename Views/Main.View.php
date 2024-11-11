@@ -13,7 +13,7 @@
         
         <nav class="nav-left-upper mask">
 
-        <div id="usracc-modal" class="usracc_modal" popover="auto"></div>
+            <?php include 'partials/user_modal.php'; ?>
             
             <div class="div-left-upper">
 

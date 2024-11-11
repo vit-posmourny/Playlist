@@ -62,6 +62,7 @@ button {
 
 #d-user-btn-cont {
     display: flex;
+    width: 89%;
 }
 
 #b-user-arrow::after {
