@@ -52,12 +52,14 @@
     gap: 0 9px ;
     display: flex;
     align-items: center;
+    margin-right: 1.5%;
     margin-bottom: .5em ;
     padding: .2em 0.4em .3em 0.3em;
     border-bottom: .1em solid #d8d8d859 ;
     border-radius: 6px;
     background-color: var(--bg-main-gray);
     overflow: hidden;
+    font-size: 1.2em;
 }
 
 

@@ -80,10 +80,16 @@ details summary::-webkit-details-marker {
 details > ul {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+
 }
 
 
-li {
+details li {
     font-size: 1.2em;
     padding-left: 5%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    width: 90%;
+    white-space: nowrap; /* prevent text wrapping */
+    overflow: hidden; /* hide overflow */
 }

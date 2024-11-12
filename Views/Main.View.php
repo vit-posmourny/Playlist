@@ -19,7 +19,7 @@
 
                 <div id="d-user-btn-cont">
                     <button id="b-user-btn" class="button_main width"><?php if (!$_SESSION['logout']) {echo $_SESSION['user_email'];}?></button>
-                    <button id="b-user-arrow" class="button_main" popovertarget="usracc-modal"></button>
+                    <button id="b-user-arrow" class="button_main" popovertarget="d-usracc-modal"></button>
                 </div>
                 
                 <a id="a-logout" href="/Playlist/login/logout" class="width"><button class="button_main letter-spacing" type="button" style="width: 100%;">LogOut</button></a>
