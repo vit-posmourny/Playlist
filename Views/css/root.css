@@ -38,7 +38,7 @@
     --light-blue: #e0f1ff;
 
     /*usracc-modal.css*/
-    --bg-user-modal: linear-gradient(to top, snow 75%, rgb(53, 53, 53) 75%,var(--bg-main-gray) 76%, var(--bg-main-gray) 100%);
+    --bg-user-modal: linear-gradient(to top, snow 75%, rgb(70, 70, 70) 75%,var(--bg-main-gray) 76%, var(--bg-main-gray) 100%);
 }
 
 .disable-select {

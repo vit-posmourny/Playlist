@@ -1,6 +1,7 @@
 var usraccModal = document.getElementsByClassName('usracc_modal')[0];
 var mouseCoords = document.getElementById('mouseCoords');
 
+
 usraccModal.addEventListener('mousemove', getMouseCoords);
 
 let isMouseDown = false;
