@@ -15,7 +15,7 @@
     background: var(--bg-user-modal);
 }
 
-.add_pict_modal {
+.user_foto_modal {
     position: relative;
     border-radius: 0.5rem;
     border: 0px;
