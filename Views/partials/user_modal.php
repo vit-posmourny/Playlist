@@ -10,7 +10,7 @@
 
 </div>
 
-<div id="d-add-pict-modal" class="add_pict_modal" popover="auto"></div>
+<div id="d-crop-modal" class="crop_modal" popover="auto"></div>
 
 <script type="text/javascript"> <?php include "..\js\usracc_modal.js"?> </script>
 <script type="text/javascript"> <?php include "..\js\user_foto_modal.js"?> </script>

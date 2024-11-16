@@ -15,7 +15,7 @@
     background: var(--bg-user-modal);
 }
 
-.user_foto_modal {
+.crop_modal {
     position: relative;
     border-radius: 0.5rem;
     border: 0px;
