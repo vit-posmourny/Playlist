@@ -24,9 +24,8 @@
     left: 19vw;
     top: 14px;
     width: 500px;
-    height: 700px;
+    height: 600px;
     box-shadow: var(--box-shadow-main);
-    background: var(--bg-user-modal);
 }
 
 
@@ -70,12 +69,4 @@
 
 #i-user-foto {
     content: url("/Playlist/images/account_circle_48dp_5F6368_FILL0_wght200_GRAD0_opsz48.svg"); 
-}
-
-
-.text_area {
-    background-color: aqua;
-    width: 100%;
-    height: 50%;
-    user-select: none;
 }
