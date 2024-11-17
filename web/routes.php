@@ -2,7 +2,8 @@
     use App\Controllers\MainController;
     use App\Controllers\LoginController;
     use App\Controllers\RegisterController;
-    use Core\Router;
+use App\Models\Playlist;
+use Core\Router;
 
     $router = new Router();
 
@@ -18,6 +19,7 @@
     $router->get("/Playlist/register", RegisterController::class, 'showRegisterForm');
     $router->post("/Playlist/register", RegisterController::class, 'registerUser');
 
+    $router->get("/Playlist/croppie", CroppieController::class, 'showCroppieDialog');
 
 
     //zjištění na jaké adrese
