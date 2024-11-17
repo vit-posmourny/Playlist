@@ -1,8 +1,5 @@
 <html>
     <head>
-        <link rel="stylesheet" href="root.css">
-        <link rel="stylesheet" href="main-button-styles.css">
-        <link rel="stylesheet" href="croppie.css">
         <!-- Croppie CSS and JS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.js"></script>

@@ -49,7 +49,7 @@
     <div class="container-central">
         
         
-        <nav class="nav-central-top"><button id="open">open</button></nav>
+        <nav class="nav-central-top"></nav>
         
         <div class="central-bottom"></div>
         
@@ -84,7 +84,6 @@
 <script type="text/javascript"> <?php include "js\slot_play_button.js"?> </script>
 <script type="text/javascript"> <?php include "js\disclosure.js"?> </script>
 <script type="text/javascript"> <?php include "js\usracc_modal.js"?> </script>
-<script type="text/javascript"> <?php include "js\croppie_modal.js"?> </script>
 
 </body>
 

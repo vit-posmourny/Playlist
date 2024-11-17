@@ -2,8 +2,9 @@
     use App\Controllers\MainController;
     use App\Controllers\LoginController;
     use App\Controllers\RegisterController;
-use App\Models\Playlist;
-use Core\Router;
+    use App\Controllers\CroppieController;
+    use App\Models\Playlist;
+    use Core\Router;
 
     $router = new Router();
 

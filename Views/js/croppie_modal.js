@@ -1,4 +1,4 @@
-var imgBtn = document.getElementById('open');
+var imgBtn = document.getElementById('i-user-foto');
 
 imgBtn.addEventListener('click', openDialogInNewWindow);
 
