@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="/Playlist/Views/css/disclosure-styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    
+    <!-- Include Croppie CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.css" />
+
+    <!-- Include Croppie JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.js"></script>
+
     <title><?php echo $title; ?></title>
 <head>

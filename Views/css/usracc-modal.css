@@ -16,17 +16,30 @@
 }
 
 .crop_modal {
-    position: relative;
+    position: absolute;
+    display: none;
     border-radius: 0.5rem;
     border: 0px;
-    z-index: 1;
+    z-index: 1000;
     margin: 0%;
-    left: 19vw;
+    left: 50%;
+    transform: translate(-50%);
     top: 14px;
     width: 500px;
     height: 700px;
     box-shadow: var(--box-shadow-main);
-    background: var(--bg-user-modal);
+    /* background: var(--bg-user-modal); */
+}
+
+
+#croppie-container {
+    width: 400x;
+    height: 400px;
+}
+
+
+#croppie-buttons {
+    gap: 20px;
 }
 
 
