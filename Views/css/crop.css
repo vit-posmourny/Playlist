@@ -1,0 +1,17 @@
+#croppie-flex {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 50vh;
+}
+
+#crop-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#crop-container {
+    width: 300;
+    height: 500;
+}

@@ -1,24 +1,23 @@
 <html>
-    <head>
-        <!-- Croppie CSS and JS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.js"></script>
-    </head>
+    <?php Core\View::render('partials/header', ['title' => $title ?? 'Crop User Foto']); ?>
+
     <body>
         <div id="croppie-flex">
-            <div id="controls">
-                <input type="file" id="upload-image" accept="image/*">
+
+            <div id="crop-controls">
+                <input type="file" id="upload-image" class="button_main" accept="image/*">
                 <button id="crop-result" class="button_main">Crop & Download</button>
             </div>
-            <div id="croppie-container" style="width: 300; height: 300;"></div>
+
+            <div id="crop-container"></div>
         </div>
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
             // 1. Initialize Croppie
-            const el = document.getElementById('croppie-container');
+            const el = document.getElementById('crop-container');
             const croppieInstance = new Croppie(el, {
-                viewport: { width: 300, height: 300, type: 'square' }, // Options: square or circle
+                viewport: { width: 200, height: 200, type: 'square' }, // Options: square or circle
                 boundary: { width: 550, height: 450 },
                 enableOrientation: true
             });

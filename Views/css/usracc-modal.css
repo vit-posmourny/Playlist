@@ -15,26 +15,11 @@
     background: var(--bg-user-modal);
 }
 
-.crop_modal {
-    position: relative;
-    border-radius: 0.5rem;
-    border: 0px;
-    z-index: 1;
-    margin: 0%;
-    left: 19vw;
-    top: 14px;
-    width: 500px;
-    height: 600px;
-    box-shadow: var(--box-shadow-main);
-}
-
-
 [popover]:popover-open {
     opacity: 1;
     transform: scaleX(1);
 }
   
-
 [popover] {
     /* Final state of the exit animation */
     opacity: 0;
@@ -55,7 +40,6 @@
   }
 }
 
-
 #b-user-foto {
     background-color: white;
     width: 100px;
@@ -65,7 +49,6 @@
     margin-top: 12%;
     padding: 0;
 }
-
 
 #i-user-foto {
     content: url("/Playlist/images/account_circle_48dp_5F6368_FILL0_wght200_GRAD0_opsz48.svg"); 
