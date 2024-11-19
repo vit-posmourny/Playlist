@@ -1,11 +1,11 @@
 <html>
     <?php Core\View::render('partials/header', ['title' => $title ?? 'Crop User Foto']); ?>
 
-    <body>
-        <div id="croppie-flex">
+    <body id="b-crop-body">
+        <div id="crop-flex">
 
             <div id="crop-controls">
-                <input type="file" id="upload-image" class="button_main" accept="image/*">
+                <input type="file" id="i-upload-image" class="button_main" accept="image/*">
                 <button id="crop-result" class="button_main">Crop & Download</button>
             </div>
 
@@ -18,12 +18,12 @@
             const el = document.getElementById('crop-container');
             const croppieInstance = new Croppie(el, {
                 viewport: { width: 200, height: 200, type: 'square' }, // Options: square or circle
-                boundary: { width: 550, height: 450 },
+                boundary: { width: 750, height: 800 },
                 enableOrientation: true
             });
     
             // 2. Handle image upload
-            document.getElementById('upload-image').addEventListener('change', function (event) {
+            document.getElementById('i-upload-image').addEventListener('change', function (event) {
                 const reader = new FileReader();
                 reader.onload = function (e) {
                     croppieInstance.bind({

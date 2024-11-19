@@ -24,7 +24,6 @@
     /* Final state of the exit animation */
     opacity: 0;
     transform: scaleX(0.9);
-  
     transition-property: opacity, transform, overlay, display;
     transition-duration: 0.3s;
     transition-behavior: allow-discrete;
@@ -42,14 +41,32 @@
 
 #b-user-foto {
     background-color: white;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
+    width: 30%;
+    aspect-ratio: 1;
+    border-radius: 300px;
     border: 0px;
-    margin-top: 21%;
+    margin-top: 18%;
     padding: 0;
 }
 
 #i-user-foto {
     content: url("/Playlist/images/account_circle_48dp_5F6368_FILL0_wght200_GRAD0_opsz48.svg"); 
+}
+
+
+#i-upload-image {
+    width: 39%;
+}
+
+#b-crop-body {
+    min-width: 874px;
+    margin-inline: 0.5em;
+}
+
+#crop-flex {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
 }
