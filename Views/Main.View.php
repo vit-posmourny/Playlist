@@ -17,8 +17,8 @@
             
             <div class="div-left-upper">
 
-                <div id="d-user-btn-cont">
-                    <button id="b-user-btn" class="button_main width"><?php if (!$_SESSION['logout']) {echo $_SESSION['user_email'];}?></button>
+                <div id="d-user-btn-cont" class="width">
+                    <button id="b-user-btn" class="button_main"><?php if (!$_SESSION['logout']) {echo $_SESSION['user_email'];}?></button>
                     <button id="b-user-arrow" class="button_main" popovertarget="d-usracc-modal"></button>
                 </div>
                 

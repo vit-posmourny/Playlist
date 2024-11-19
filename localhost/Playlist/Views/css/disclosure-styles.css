@@ -1,7 +1,7 @@
 details {
     font-family: var(--font-family);
     font-size: 0.7em;
-    width: 94%;
+    width: 91%;
     margin: 0 auto ;
     background: var(--background-main-invert);
     color: var(--text-color);
@@ -31,7 +31,6 @@ summary {
 h2 {
     font-family: "Orator Std";
     text-shadow: 1px 1px #2d2c2c;
-
     font-size: 1.8em;
     vertical-align: -32%;
 }
@@ -85,7 +84,7 @@ details > ul {
 
 
 details li {
-    font-size: 1.6em;
+    font-size: 1.2em;
     padding-left: 5%;
     display: inline-block;
     text-overflow: ellipsis;

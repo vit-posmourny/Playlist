@@ -38,28 +38,26 @@ foreach ($playlist as $slot) {
             <li class="playlist-item">
             
                 <audio id="'.$index_slot.'" ontimeupdate="updateTrackTime(this)" class="state_pause slot_class"
-                
-                        src="'.$slot['track_path'].'">
+                    src="'.$slot['track_path'].'">
                 </audio>
                 
-                <img class="playlist-img" src="'.$slot['img_path'].'" alt="cover">
-                
+                <div id="d-cover-cont">
+                    <img class="playlist-img" src="'.$slot['img_path'].'" alt="cover">
+                </div>
+
                 <img id="'.$index_slot.'" class="slot-play-icon" onclick="getListPlayIconId(event);"
-                
-                        src="'.$playicon.'" data-track-path="'.$slot['track_path'].'" alt="play-icon">
+                    src="'.$playicon.'" data-track-path="'.$slot['track_path'].'" alt="play-icon">
                         
                 <div class="slot-text-area">
                 
                     <b class="track-name">'.$slot['track_name'].'</b>
                     
-                        <text class="td-title">'.$slot['album'].'</text>
+                    <text class="td-title">'.$slot['album'].'</text>
                     
                     <div class="inlineFlex">
-                        
                         <text class="td-genre">'.$slotGenres.'</text>
                         
                         <text id="id-tracktime'.$index_slot.'" class="td-track-time"></text>
-                        
                     </div>
                 
                 </div>
