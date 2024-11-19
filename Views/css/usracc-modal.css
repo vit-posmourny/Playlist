@@ -59,8 +59,13 @@
 }
 
 #b-crop-body {
-    min-width: 874px;
+    display: flex;
+    /* min-width: 856px; */
     margin-inline: 0.5em;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
+    align-content: flex-start;
 }
 
 #crop-flex {
@@ -69,4 +74,5 @@
     height: 100vh;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
 }

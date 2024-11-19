@@ -83,7 +83,6 @@
 
 <script type="text/javascript"> <?php include "js\slot_play_button.js"?> </script>
 <script type="text/javascript"> <?php include "js\disclosure.js"?> </script>
-<script type="text/javascript"> <?php include "js\usracc_modal.js"?> </script>
 <script type="text/javascript"> <?php include "js\croppie_modal.js"?> </script>
 
 </body>

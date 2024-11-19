@@ -5,6 +5,3 @@
     </button>
 
 </div>
-
-<script type="text/javascript"> <?php include "..\js\usracc_modal.js"?> </script>
-<script type="text/javascript"> <?php include "..\js\croppie_modal.js"?> </script>

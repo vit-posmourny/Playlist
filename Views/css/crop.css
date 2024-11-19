@@ -6,11 +6,12 @@
 }
 
 #crop-controls {
+    width: 750px;
     display: flex;
     justify-content: space-between;
 }
 
 #crop-container {
-    width: 300;
-    height: 500;
+    width: 750px;
+    height: 800px;
 }

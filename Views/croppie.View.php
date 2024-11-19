@@ -19,7 +19,8 @@
             const croppieInstance = new Croppie(el, {
                 viewport: { width: 200, height: 200, type: 'square' }, // Options: square or circle
                 boundary: { width: 750, height: 800 },
-                enableOrientation: true
+                enableOrientation: true,
+                enableZoom: true,
             });
     
             // 2. Handle image upload
