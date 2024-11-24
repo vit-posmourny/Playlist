@@ -91,5 +91,5 @@ details li {
     text-overflow: ellipsis;
     width: 90%;
     white-space: nowrap; /* prevent text wrapping */
-    overflow: hidden; /* hide overflow */
+    overflow: hidden;
 }

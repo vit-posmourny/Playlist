@@ -17,7 +17,7 @@ foreach ($explodeArr as $genre)
     echo '
     <details>
         <summary id="'.$genres[$genre].'" class="nav-left-bottom-summary"><h2>'.$genres[$genre].'</h2></summary>
-        <ul>';
+        <ul class="content">';
         $interpret = [];
         
         // $playlist sem donáší Core/View.php
