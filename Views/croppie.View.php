@@ -7,14 +7,18 @@
 
             <div id="crop-controls">
 
-                <form action="/Playlist/croppie" method="post" enctype="multipart/form-data">Select image to upload:
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Upload Image" name="submit">
+                <form action="/Playlist/croppie" method="post" enctype="multipart/form-data">
+                    <input type="file" name="fileToUpload" id="fileToUpload" hidden>
+                    <input type="submit" value="Upload Image" name="submit" hidden>
                 </form>
+
+                <input type="file" id="i-upload-image" class="button_main" accept="image/*">
+                <button id="crop-result" class="button_main">Crop & Download</button>
 
             </div>
 
             <div id="crop-container"></div>
+            
         </div>
 
         <script>
@@ -65,5 +69,5 @@
         </script>
 
     </body>
-    
+
 </html>
