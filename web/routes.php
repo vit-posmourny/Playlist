@@ -21,6 +21,7 @@
     $router->post("/Playlist/register", RegisterController::class, 'registerUser');
 
     $router->get("/Playlist/croppie", CroppieController::class, 'showCroppieDialog');
+    $router->post("/Playlist/croppie", CroppieController::class, 'uploadAccountImg');
 
 
     //zjištění na jaké adrese

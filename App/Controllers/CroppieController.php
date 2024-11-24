@@ -12,4 +12,9 @@ class CroppieController
             'title' => 'Crop User Foto',
         ]);
     }
+
+    public function uploadAccountImg()
+    {
+        
+    }
 }
