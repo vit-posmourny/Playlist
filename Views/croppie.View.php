@@ -6,8 +6,12 @@
         <div id="crop-flex">
 
             <div id="crop-controls">
-                <input type="file" id="i-upload-image" class="button_main" accept="image/*">
-                <button id="crop-result" class="button_main">Crop & Download</button>
+
+                <form action="/Playlist/croppie" method="post" enctype="multipart/form-data">Select image to upload:
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Upload Image" name="submit">
+                </form>
+
             </div>
 
             <div id="crop-container"></div>
@@ -48,19 +52,18 @@
                 });
             });
 
-                // Helper function to download the cropped image
-                function downloadImage(dataUrl, filename) {
-                    const a = document.createElement('a');
-                    a.href = dataUrl;
-                    a.download = filename;
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                };
-                                    
-                        
+            // Helper function to download the cropped image
+            function downloadImage(dataUrl, filename) {
+                const a = document.createElement('a');
+                a.href = dataUrl;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            };
 
-      </script>
-        
+        </script>
+
     </body>
+    
 </html>
