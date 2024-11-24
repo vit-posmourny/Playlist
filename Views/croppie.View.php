@@ -2,6 +2,7 @@
     <?php Core\View::render('partials/header', ['title' => $title ?? 'Crop User Foto']); ?>
 
     <body id="b-crop-body">
+
         <div id="crop-flex">
 
             <div id="crop-controls">
@@ -55,5 +56,6 @@
             }
         });
         </script>
+        
     </body>
 </html>
