@@ -5,12 +5,22 @@
 
         <div id="crop-flex">
 
-            <div id="crop-controls">
-                <input type="file" id="i-upload-image" class="button_main" accept="image/*">
+            <div id="crop-controls" class="crop_controls">
+
+                <input id="i-for-cropping" type="file" class="button_main" accept="image/*">
                 <button id="crop-result" class="button_main">Crop & Download</button>
+
             </div>
 
             <div id="crop-container"></div>
+
+            <form action="/Playlist/croppie" method="post" enctype="multipart/form-data" class="crop_controls">
+
+                    <input id="fileToUpload" type="file" name="fileToUpload" class="button_main">
+                    <button type="submit" name="submit" class="button_main">Odeslat na server</button>
+                    
+            </form>
+            
         </div>
 
         <script>
@@ -26,7 +36,7 @@
                 });
         
                 // 2. Handle image upload
-                document.getElementById('i-upload-image').addEventListener('change', function (event) {
+                document.getElementById('i-for-cropping').addEventListener('change', function (event) {
                     const reader = new FileReader();
                     reader.onload = function (e) {
                         croppieInstance.bind({
@@ -48,19 +58,18 @@
                 });
             });
 
-                // Helper function to download the cropped image
-                function downloadImage(dataUrl, filename) {
-                    const a = document.createElement('a');
-                    a.href = dataUrl;
-                    a.download = filename;
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                };
-                                    
-                        
+             // Helper function to download the cropped image
+            function downloadImage(dataUrl, filename) {
+                const a = document.createElement('a');
+                a.href = dataUrl;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
 
-      </script>
-        
+        </script>
+
     </body>
+
 </html>

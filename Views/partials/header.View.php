@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="/Playlist/Views/css/login-register-styles.css">
     <link rel="stylesheet" href="/Playlist/Views/css/disclosure-styles.css">
     <link rel="stylesheet" href="/Playlist/Views/css/croppie.css">
-    <link rel="stylesheet" href="/Playlist/Views/css/crop.css">
     <script src="/Playlist/Views/js/croppie.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
