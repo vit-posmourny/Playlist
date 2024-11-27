@@ -7,8 +7,6 @@
 
             <div id="crop-controls" class="crop_controls">
 
-                
-
                 <input id="i-for-cropping" type="file" class="button_main" accept="image/*">
                 <button id="crop-result" class="button_main">Crop & Download</button>
 
