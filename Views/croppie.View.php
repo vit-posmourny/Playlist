@@ -12,6 +12,8 @@
 
             </div>
 
+            <p id="p-crop-warn-msg">s\gs\g\sdgsd\g<?php $title; ?></p>
+
             <div id="crop-container"></div>
 
             <form action="/Playlist/croppie" method="post" enctype="multipart/form-data" class="crop_controls">
@@ -67,6 +69,13 @@
                 a.click();
                 document.body.removeChild(a);
             }
+
+        </script>
+
+        <script>
+
+            var message = document.getElementById('p-crop-warn-msg');
+            message.innerHTML = <?php $title; ?>;
 
         </script>
 

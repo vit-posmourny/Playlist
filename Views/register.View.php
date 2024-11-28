@@ -8,19 +8,19 @@
             
             <input id="input-email" type="text" name="email" placeholder="Email" >
             
-                <p id="mail-error" class="form__error-message"><?php echo $_SESSION['email_exists']?></p>
+                <p id="mail-error" class="form__error-message flogin_size"><?php echo $_SESSION['email_exists']?></p>
             
             <input id="input-pass" type="text" name="password" placeholder="Heslo">
             
-                <p id="pass-error" class="form__error-message"></p>
+                <p id="pass-error" class="form__error-message flogin_size"></p>
             
             <input id="id_input_pass2" type="text" name="password" placeholder="Potvrdit heslo">
             
-                <p id="id-pass2-err" class="form__error-message"></p>
+                <p id="id-pass2-err" class="form__error-message flogin_size"></p>
             
             <button id="id-btn-register" class="button_main" type="button">Vytvořit účet</button>
             
-                <p id="all-error" class="form__error-message"></p>
+                <p id="all-error" class="form__error-message flogin_size"></p>
 
             <div class="form__footer">
                 

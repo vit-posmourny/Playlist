@@ -9,15 +9,15 @@
             
             <input id="input-email" name="email" type="text" placeholder="Email">
             
-                <p id="mail-error" class="form__error-message letter-spacing"><?php echo $_SESSION['wrong_email'];?></p>
+                <p id="mail-error" class="form__error-message letter-spacing flogin_size"><?php echo $_SESSION['wrong_email'];?></p>
             
             <input id="input-pass" name="password" type="text" placeholder="Heslo">
             
-                <p id="pass-error" class="form__error-message letter-spacing"><?php echo $_SESSION['wrong_password'];?></p>
+                <p id="pass-error" class="form__error-message letter-spacing flogin_size"><?php echo $_SESSION['wrong_password'];?></p>
                     
             <button id="id-btn-login-b" class="button_main letter-spacing" type="button">Přihlášení</button>
             
-                <p id="all-error" class="form__error-message letter-spacing"></p>
+                <p id="all-error" class="form__error-message letter-spacing flogin_size"></p>
             
             <input id="id-hidden-checkbox" type="hidden" name="hidden-checkbox" value='false'>
 

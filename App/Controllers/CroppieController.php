@@ -26,7 +26,7 @@ class CroppieController
 
                 $uploadOk = 1;
             } else {
-                echo "File is not an image.";
+                echo "<script> alert('File is not an image.'); </script>";
                 $uploadOk = 0;
             }
         }
@@ -46,7 +46,7 @@ class CroppieController
         // Allow certain file formats
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
         && $imageFileType != "gif" ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            echo "<script> alert('Sorry, only JPG, JPEG, PNG & GIF files are allowed.') </script>";
             $uploadOk = 0;
         }
 
