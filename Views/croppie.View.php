@@ -12,7 +12,7 @@
 
             </div>
 
-            <p id="p-crop-warn-msg">s\gs\g\sdgsd\g<?php $title; ?></p>
+            <p id="p-crop-warn-msg" style="font-size: larger; color:antiquewhite;"></p>
 
             <div id="crop-container"></div>
 
@@ -75,7 +75,7 @@
         <script>
 
             var message = document.getElementById('p-crop-warn-msg');
-            message.innerHTML = <?php $title; ?>;
+            message.innerHTML = "<?php echo $messages[0]; ?>";
 
         </script>
 

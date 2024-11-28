@@ -10,6 +10,7 @@ class CroppieController
     {
         return View::render('croppie', [
             'title' => 'Crop User Foto',
+            'messages' => [$msg1],
         ]);
     }
 
@@ -26,32 +27,37 @@ class CroppieController
 
                 $uploadOk = 1;
             } else {
-                echo "<script> alert('File is not an image.'); </script>";
+                // msg #1
+                $msg1 = "File is not an image.";
                 $uploadOk = 0;
             }
         }
 
         // Check if file already exists
         if (file_exists($target_file)) {
-            echo "Sorry, file already exists. <br>";
+            // msg #2
+            $msg2 = "Sorry, file already exists. <br>";
             $uploadOk = 0;
         }
   
         // Check file size
         if ($_FILES["fileToUpload"]["size"] > 500000) {
-            echo "Sorry, your file is too large. <br>";
+            // msg #3
+            $msg3 = "Sorry, your file is too large. <br>";
             $uploadOk = 0;
         }
   
         // Allow certain file formats
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
         && $imageFileType != "gif" ) {
-            echo "<script> alert('Sorry, only JPG, JPEG, PNG & GIF files are allowed.') </script>";
+            // msg #4
+            $msg4 = "<script> alert('Sorry, only JPG, JPEG, PNG & GIF files are allowed.') </script>";
             $uploadOk = 0;
         }
 
         if ($uploadOk == 0) {
-            echo "Sorry, your file was not uploaded.";
+            // msg #5
+            $msg5 = "Sorry, your file was not uploaded.";
           // if everything is ok, try to upload file
         } 
         else {
@@ -60,7 +66,8 @@ class CroppieController
                 header('location: /Playlist/croppie');
             }
             else {
-                echo "Sorry, there was an error uploading your file.";
+                // msg #6
+                $msg6 = "Sorry, there was an error uploading your file.";
             }
         }
     }
