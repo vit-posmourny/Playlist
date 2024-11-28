@@ -12,7 +12,7 @@
 
             </div>
 
-            <p id="p-crop-warn-msg" style="font-size: larger; color:antiquewhite;"></p>
+            <p id="p-crop-warn-msg" style="font-size: larger; color:antiquewhite; margin:0"></p>
 
             <div id="crop-container"></div>
 
@@ -73,12 +73,15 @@
         </script>
 
         <script>
-
             var message = document.getElementById('p-crop-warn-msg');
-            message.innerHTML = "<?php foreach($messages as $message){
-                                            echo $message.' ';
+            message.innerHTML = "<?php if (isset($messages[0])) {
+                                            foreach($messages as $message){
+                                                echo $message.' ';
+                                            } 
+                                        }else{
+                                            echo '';
                                         }
-                                ?>"
+                                ?>";
             message.style.color = "<?php echo $color; ?>"
         </script>
 
