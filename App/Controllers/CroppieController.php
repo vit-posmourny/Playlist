@@ -6,14 +6,22 @@ use Core\View;
 
 class CroppieController
 {
-    public $msg1 = null;
+    private $msg1 = null;
+    private $msg2 = null;
+    private $msg3 = null;
     private $msg4 = null;
+    private $msg5 = null;
+    private $msg6 = null;
+    private $msg7 = null;
+
+    private $color = null;
 
     public function showCroppieDialog()
     {
         return View::render('croppie', [
             'title' => 'Crop User Foto',
-            'messages' => [$this->msg1, $this->msg4],
+            'messages' => [$this->msg1, $this->msg4, $this->msg6],
+            'color' => $this->color,
         ]);
     }
 
@@ -32,6 +40,7 @@ class CroppieController
             } else {
                 // msg #1
                 $this->msg1 = "File is not an image.";
+                $this->color = 'red';
                 $uploadOk = 0;
             }
         }
@@ -55,7 +64,6 @@ class CroppieController
         && $imageFileType != "gif" ) {
             // msg #4
             $this->msg4 = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-            $this->showCroppieDialog();
             $uploadOk = 0;
         }
         
@@ -67,12 +75,15 @@ class CroppieController
         else {
             
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                header('location: /Playlist/croppie');
+                // msg #6
+                $this->msg6 = "Image uploaded successfull.";
+                $this->color = "green";
             }
             else {
-                // msg #6
-                $msg6 = "Sorry, there was an error uploading your file.";
+                // msg #7
+                $msg7 = "Sorry, there was an error uploading your file.";
             }
         }
+        $this->showCroppieDialog();
     }
 }

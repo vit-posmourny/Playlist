@@ -79,6 +79,7 @@
                                             echo $message.' ';
                                         }
                                 ?>"
+            message.style.color = "<?php echo $color; ?>"
         </script>
 
 
