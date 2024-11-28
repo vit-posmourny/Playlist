@@ -6,11 +6,14 @@ use Core\View;
 
 class CroppieController
 {
+    public $msg1 = null;
+    private $msg4 = null;
+
     public function showCroppieDialog()
     {
         return View::render('croppie', [
             'title' => 'Crop User Foto',
-            'messages' => [$msg1],
+            'messages' => [$this->msg1, $this->msg4],
         ]);
     }
 
@@ -28,18 +31,18 @@ class CroppieController
                 $uploadOk = 1;
             } else {
                 // msg #1
-                $msg1 = "File is not an image.";
+                $this->msg1 = "File is not an image.";
                 $uploadOk = 0;
             }
         }
-
+        
         // Check if file already exists
         if (file_exists($target_file)) {
             // msg #2
             $msg2 = "Sorry, file already exists. <br>";
             $uploadOk = 0;
         }
-  
+        
         // Check file size
         if ($_FILES["fileToUpload"]["size"] > 500000) {
             // msg #3
@@ -51,14 +54,15 @@ class CroppieController
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
         && $imageFileType != "gif" ) {
             // msg #4
-            $msg4 = "<script> alert('Sorry, only JPG, JPEG, PNG & GIF files are allowed.') </script>";
+            $this->msg4 = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $this->showCroppieDialog();
             $uploadOk = 0;
         }
-
+        
         if ($uploadOk == 0) {
             // msg #5
             $msg5 = "Sorry, your file was not uploaded.";
-          // if everything is ok, try to upload file
+            // if everything is ok, try to upload file
         } 
         else {
             

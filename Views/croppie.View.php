@@ -75,9 +75,12 @@
         <script>
 
             var message = document.getElementById('p-crop-warn-msg');
-            message.innerHTML = "<?php echo $messages[0]; ?>";
-
+            message.innerHTML = "<?php foreach($messages as $message){
+                                            echo $message.' ';
+                                        }
+                                ?>"
         </script>
+
 
     </body>
 
