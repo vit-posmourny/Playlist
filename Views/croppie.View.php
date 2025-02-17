@@ -31,7 +31,7 @@
                 // 1. Initialize Croppie
                 const el = document.getElementById('crop-container');
                 const croppieInstance = new Croppie(el, {
-                    viewport: { width: 200, height: 200, type: 'square' }, // Options: square or circle
+                    viewport: { width: 200, height: 200, type: 'circle' }, // Options: square or circle
                     boundary: { width: 750, height: 800 },
                     enableOrientation: true,
                     enableZoom: true,
@@ -74,14 +74,15 @@
 
         <script>
             var message = document.getElementById('p-crop-warn-msg');
-            message.innerHTML = "<?php if (isset($messages[0])) {
-                                            foreach($messages as $message){
-                                                echo $message.' ';
-                                            } 
-                                        }else{
-                                            echo '';
-                                        }
-                                ?>";
+            message.innerHTML = 
+                "<?php if (isset($messages[0])) {
+                            foreach($messages as $message){
+                                echo $message.' ';
+                            } 
+                        }else{
+                            echo '';
+                        }
+                ?>";
             message.style.color = "<?php echo $color; ?>"
         </script>
 

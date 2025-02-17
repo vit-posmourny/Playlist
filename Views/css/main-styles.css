@@ -97,6 +97,11 @@ body {
 
 .nav-left-bottom-overflow {
     overflow: auto;
+    width: 100%;
+}
+
+
+.nav-left-bottom-overflow.has-scrollbar {
     width: 98%;
 }
 

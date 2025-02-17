@@ -34,7 +34,7 @@
         
         <nav class="nav-left-bottom">
             
-            <nav class="nav-left-bottom-overflow disable-select">
+            <nav class="nav-left-bottom-overflow disable-select scrollable">
             
                 <?php include 'partials/disclosure_nav_genre.php'; ?>
                 

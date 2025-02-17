@@ -4,6 +4,9 @@ var userButtonState = true;
 const userButton = document.getElementById("b-user-btn");
 userButton.addEventListener("click", navLeftUpperUnroll);
 
+window.addEventListener('load', checkScrollbar);
+window.addEventListener('resize', checkScrollbar);
+
 
 function navLeftUpperUnroll()
 {
@@ -38,4 +41,16 @@ function getGenreSummaryId() {
     let id = this.id;
     //TODO potreba osetrit, ze jenom pro <summary> co je potomek <details>, ktery
     // nema attr.[open], nebo ktery je proste close, se zavola getInterpreterByGenre()
+}
+
+
+function checkScrollbar() {
+    const element = document.querySelector('.scrollable');
+    if (element.scrollHeight > element.clientHeight) {
+        // Add class if scrollbar is present
+        element.style.width = '98%';
+    } else {
+        // Remove class if scrollbar is absent
+        element.style.width = '100%';
+    }
 }
