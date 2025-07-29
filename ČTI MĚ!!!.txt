@@ -1,6 +1,6 @@
+Aplikace je přístupná na adrese http://localhost/Playlist/
 
 importovat: \Playlist\users.sql; \Playlist\music.sql
-
 
 email:                      heslo:
 vit.posmourny@gmail.com     12345678
